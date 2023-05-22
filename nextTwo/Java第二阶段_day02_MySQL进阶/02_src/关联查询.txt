@@ -1,0 +1,153 @@
+drop table teacher;
+create table teacher(
+	id int primary key auto_increment,
+	teacher_name varchar(20),
+	teacher_city varchar(20)
+);
+drop table student;
+create table student(
+	id int primary key auto_increment,
+	student_name varchar(20),
+	student_city varchar(20),
+	teacher_id int
+	-- CONSTRAINT fk_t_s foreign key (teacher_id) references teacher(id) on update cascade on delete cascade
+    -- 单行注释用 "-- " 注意这个风格下"--【空格】" 也就是说“--" 与注释之间是有空格的
+);
+
+insert into teacher(teacher_name, teacher_city) values
+	('赵大', '武汉'), ('陈二', '鄂州'), ('张三', '襄阳');
+insert into student(student_name, student_city, teacher_id ) values
+	('李四', '宜昌', 1), ('王五', '恩施', 1), ('钱六', '黄石', 1),
+	('周七', '孝感', 2), ('胡八', '武汉', 2);
+
+
+-- 交叉关联
+select a.teacher_name, b.student_name
+from teacher a, student b;
+select a.teacher_name, b.student_name, c.bbb
+from teacher a, student b, test01 c order by a.teacher_name;
+select a.teacher_name, b.student_name from teacher a
+	cross join student b;
+
+
+-- 内连接
+select a.teacher_name, b.student_name
+	from teacher a, student b where a.id = b.teacher_id;
+-- 或者是
+select a.teacher_name, b.student_name
+from teacher a
+	INNER JOIN student b on a.id = b.teacher_id;
+insert into teacher(teacher_name, teacher_city) values
+	('王胖', '武汉');
+insert into student(student_name, student_city, teacher_id ) values
+	('大金牙', '武汉', 20);
+
+-- 左外关联
+select a.teacher_name, b.student_name
+from teacher a
+	left outer join student b on a.id = b.teacher_id;
+select a.teacher_name, b.student_name
+from teacher a
+	left join student b on a.id = b.teacher_id;
+	
+select a.teacher_name, b.student_name
+from teacher a
+	left join student b on a.id = b.teacher_id
+where b.teacher_id is not null;
+-- 这句sql等效于内连接
+select a.teacher_name, b.student_name
+from teacher a
+	left join student b on a.id = b.teacher_id
+where b.teacher_id is null;
+-- 这句sql取出没有学生对应的老师
+
+
+-- 右外关联
+select a.teacher_name, b.student_name
+from teacher a
+	right outer join student b on a.id = b.teacher_id;
+select a.teacher_name, b.student_name
+from teacher a
+	right join student b on a.id = b.teacher_id;
+	
+	
+select a.teacher_name, b.student_name
+from teacher a
+	right join student b on a.id = b.teacher_id
+where a.id is not null;
+-- 这句sql等效于内连接
+select a.teacher_name, b.student_name
+from teacher a
+	right outer join student b on a.id = b.teacher_id
+where a.id is null;
+-- 这句sql取出没有老师对应的学生
+
+-- 全外关联
+SELECT * 
+FROM TESTA 
+FULL OUTER JOIN TESTB
+ON TESTA.A=TESTB.A
+
+select a.teacher_name, b.student_name
+from teacher a
+	left outer join student b on a.id = b.teacher_id
+union  -- 注意这里需要使用去重，而不是union all
+select a.teacher_name, b.student_name
+from teacher a
+	right outer join student b on a.id = b.teacher_id;
+
+-- 自然连接
+select a.teacher_name, b.student_name
+from teacher a
+	natural join student b;
+-- 这实际等效于以下sql
+select a.teacher_name, b.student_name
+from teacher a
+	inner join student b on a.id = b.id;
+
+
+drop table teacher;
+create table teacher(
+	teacher_id int primary key auto_increment,
+	teacher_name varchar(20),
+	teacher_city varchar(20)
+);
+drop table student;
+create table student(
+	student_id int primary key auto_increment,
+	student_name varchar(20),
+	student_city varchar(20),
+	teacher_id int
+);
+insert into teacher(teacher_name, teacher_city) values
+	('赵大', '武汉'), ('陈二', '鄂州'), ('张三', '襄阳');
+insert into student(student_name, student_city, teacher_id ) values
+	('李四', '宜昌', 1), ('王五', '恩施', 1), ('钱六', '黄石', 1),
+	('周七', '孝感', 2), ('胡八一', '武汉', 2);
+insert into teacher(teacher_name, teacher_city) values
+	('王胖子', '武汉');
+insert into student(student_name, student_city, teacher_id ) values
+	('大金牙', '武汉', 20);
+
+-- 左外自然连接
+select a.teacher_name, b.student_name
+from teacher a
+	natural left outer join student b;
+-- 其等效于以下sql
+select a.teacher_name, b.student_name
+from teacher a
+	left join student b on a.teacher_id = b.teacher_id;
+
+-- 右外自然连接
+select a.teacher_name, b.student_name
+from teacher a
+	natural right outer join student b;
+-- 其等效于以下sql
+select a.teacher_name, b.student_name
+from teacher a
+	right join student b on a.teacher_id = b.teacher_id;
+
+-- 自连接
+select ta.student_name, tb.student_city
+from studnet ta， student tb
+where ta.student_id = tb.student_id;

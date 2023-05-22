@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://cdn.bootcss.com/jquery/1.11.3/jquery.js"></script>
+</head>
+<body>
+	<div class="demo" abc="bcd"></div>
+	<input type="text" abc="efg">
+	
+
+	<input class="demo2" type="checkbox" checked="false" abc="bcd">
+	<script>
+		// attr()  基于setAttribute  getAttribute
+		// 取值
+		console.log( $(".demo").attr("class") )
+		console.log( $(".demo").attr("abc") )
+		console.log( $("input").attr("abc") )
+		// 赋值  一个属性
+		$(".demo").attr("id","test1")
+		// 赋值  多个属性
+		$(".demo").attr({"id":"test1","aslkdfj":"asuidyhfiuyh"})
+
+
+		// 针对于selected checked disabled
+		// attr()
+		console.log( $(".demo2").attr("checked") ) //无论添加什么值都是checked
+
+		// prop 是特性， attr是属性，属性包含特性，prop关注的是状态，checked是否存在
+		// 取值
+		console.log( $(".demo2").prop("class") ) //demo2
+		console.log( $(".demo2").prop("checked") ) //true
+		console.log( $(".demo2").prop("abc") )  //undefined
+		// 赋值
+		$(".demo2").prop("blb","log"); 
+		//属性通过prop赋值，在标签中看不到，但是可以通过查看
+		console.log($(".demo2").prop("blb"))
+
+		//特性可以直接查看
+		//设置一个
+		$(".demo2").prop("id","test") 
+		//设置多个
+		$(".demo2").prop({"id":"test1","title":"asdfsdaf"}) 
+
+
+	</script>
+</body>
+</html>

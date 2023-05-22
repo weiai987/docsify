@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #father,.p1{
+            color: red;
+        }
+        #foot .ul1 li a{
+            color: blueviolet;
+        }
+        #foot ul li a{
+            color: teal;
+        }
+        #foot a{
+            color: yellow;
+            text-decoration: none;
+            font-size: 40px;
+        }
+        #foot>#ul{
+            width: 100px;
+            height: 200px;
+            background-color: red;
+        }
+        #div1>#div2>#div3>#div4{
+            width: 100px;
+            height: 100px;
+            background-color: green;
+        }
+       #div1+div{
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <div id="father">1</div>
+    <div>2</div>
+    <p class="p1">3</p>
+    <h1 id="h1">4</h1>
+
+    <div id="foot">
+        <!-- <p id="p1"> -->
+            <ul class="ul1">
+                <li><a href="">1</a></li>
+                <li><a href="">12</a></li>
+                <li><a href="">1234</a></li>
+            </ul>
+        <!-- </p> -->
+    </div>
+
+    <div id="div1">
+        <div id="div2">
+            <div id="div3">
+                <div id="div4"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

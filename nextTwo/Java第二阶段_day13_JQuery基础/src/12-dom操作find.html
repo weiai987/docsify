@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://cdn.bootcss.com/jquery/1.11.3/jquery.js"></script>
+</head>
+<body>
+	<div class="wrapper">
+		<ul>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+		</ul>
+	</div>
+	<ul>
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		<li>5</li>
+	</ul>
+	<script>
+		// 场景：给wrapper一个相对定位，给ul一个绝对定位，给li一个颜色
+		// $(".wrapper").css({position : "relative"});
+		// $(".wrapper ul").css({position : "absolute"});
+		// $(".wrapper ul li").css({color : "red"});
+		// 写起来比较麻烦，使用find来在指定条件下进行选择
+
+		// find()
+		$(".wrapper")
+			.css({position : "relative"})
+			.find("ul")
+			.css({position : "absolute"})
+			.find("li")
+			.css({color : "red"})
+		//代码其实没有减少多少，但是效率提升，不用每次从头进行查找
+
+		//prevObject  中有一个属性，表示的是上一个对象
+		console.log( $(".wrapper") )
+		console.log( $(".wrapper").find("ul") )
+		console.log( $(".wrapper").find("ul").find("li") )
+		// 问题 true？false
+		console.log( $(".wrapper").find("ul").find("li").prevObject == $(".wrapper").find("ul") )
+
+	</script>
+</body>
+</html>

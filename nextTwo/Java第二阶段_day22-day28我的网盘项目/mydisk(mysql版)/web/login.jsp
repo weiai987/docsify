@@ -1,0 +1,156 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+html, body {
+	padding: 0;
+	margin: 0;
+	width: 100%;
+	font-size: 14px;
+}
+
+.bg_img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 120px;
+	background-image: url("./static/img/bg3.jpg");
+	background-size: cover;
+	display: flex;
+}
+
+input[type="text"]:focus, input[type="password"]:focus{
+	border: solid 1px blue;
+}
+
+form {
+	color: #7d7d7d;
+	text-align: center;
+	width: 300px;
+	height: 330px;
+	background-color: white;
+	padding: 20px;
+	position: absolute;
+	right: 200px;
+	top: 30%;
+}
+
+.blb_input {
+	outline: none;
+	height: 35px;
+	width: 100%;
+	border: solid 1px #bfbfbf;
+	border-radius: 5px;
+	text-indent: 10px;
+}
+
+.blb_form_item {
+	margin-top: 20px;
+}
+
+input[type="button"] {
+	background-color: #5082FF;
+	border: 0px;
+	color: white;
+}
+
+a {
+	color: #5082FF;
+	text-decoration: none;
+	bottom: -20px;
+	position: relative;
+}
+
+h3 {
+	font-size: 20px;
+	padding-bottom: 20px;
+}
+
+.footer {
+	position: fixed;
+	bottom: 0px;
+	height: 120px;
+	text-align: center;
+	width: 100%;
+}
+.logo{
+	top: 20px;
+    position: absolute;
+    left: 20px;
+}
+
+input[type="checkbox"] {
+	outline: none;
+}
+
+input:hover {
+	cursor: pointer;
+}
+
+.blb_msg{
+    display: block;
+    text-align: left;
+    color: red;
+    margin-bottom: 10px;
+}
+
+</style>
+</head>
+<body>
+	<div class="bg_img">
+		<img class="logo" alt="" src="./static/img/logo.png">
+		<form action="index.html">
+			<h3>我的网盘-登录</h3>
+			<div class="blb_form_item">
+				<input class="blb_input" type="text" placeholder="用户名" name="username">
+			</div>
+			<div class="blb_form_item">
+				<input class="blb_input" type="password" placeholder="密码" name="password">
+			</div>
+			<div class="blb_form_item" style="text-align: left;">
+				<input type="checkbox" name="remember">七天免登录
+			</div>
+			<div class="blb_form_item" style="margin-top: 10px;">
+				<span class="blb_msg"></span>
+				<input type="button" id="login_bt" class="blb_input" value="登录">
+			</div>
+			<div style="text-align: right;">
+				<a href="register.jsp">立即注册</a>
+			</div>
+		</form>
+	</div>
+	<div class="footer">
+		<div style="height: 100%; margin-top: 55px;">
+			©2020 百里半. All rights reserved
+		</div>
+	</div>
+	<script type="text/javascript" src="./static/js/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$('#login_bt').click(function(){
+
+				var data = $('form').serialize();
+				
+				$.ajax({
+					url: '/login'
+					,type: 'post'
+					,data: data
+					,dataType: 'json'
+					,success: function(e){
+						if (e.rs) {
+							window.location.href="/index";
+						}else{
+							$('.blb_msg').text(e.msg);
+						}
+					}
+				})
+			})
+		})
+	</script>
+</body>
+</html>

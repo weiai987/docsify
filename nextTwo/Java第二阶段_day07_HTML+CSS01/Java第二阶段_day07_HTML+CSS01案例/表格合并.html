@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table border="1" width="600" height="600" cellspacing="0" cellpading="0" align="center">
+        <!-- 表格标题必须跟随在table标签之后
+            表格标题只能存在一个 -->
+            <caption><font size="5">这是一个九宫格</font></caption>
+        <!-- 行合并和列合并
+        
+                跨列合并  colspan
+                跨行合并  rowspan-->
+       <tr>
+           <td colspan="2">1</td>
+           <!-- <td>2</td> -->
+           <td rowspan="2">3</td>
+       </tr>
+       
+       <tr>
+           <td>4</td>
+           <td>5</td>
+           <!-- <td>6</td> -->
+       </tr>
+       
+       <tr>
+           <td colspan="3">7</td>
+           <!-- <td>8</td>
+           <td>9</td> -->
+       </tr>
+    </table>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        //         弹出 prompt 输入框，让用户输入日期，把这个值取过来保存到变量中。
+        // 将这个变量作为 switch 括号里面的表达式。
+        // case 后面的值写几个不同的水果名称，注意一定要加引号 ，因为必须是全等匹配。
+        // 弹出不同价格即可。同样注意每个 case 之后加上 break ，以便退出 switch 语句。
+        // 将 default 设置为没有此日期。
+        var fruit = prompt('请您输入查询的水果:');
+        switch (fruit) {
+            case '星期一':
+                alert('今天吃鸡翅');
+                break;
+            case '星期二':
+                alert('今天吃汉堡');
+                break;
+            case '星期三':
+                alert('今天吃煎饼果子');
+                break;
+            case '星期四':
+                alert('今天吃驴肉火烧');
+                break;
+            case '星期五':
+                alert('今天吃肉夹馍');
+                break;
+            case '星期六':
+                alert('今天吃西冷牛排');
+                break;
+            case '星期日':
+                alert('没钱了不吃了');
+                break;
+            default:
+                alert('我知道结果可能和您想的不一样，但是一周中真的没有这个日期');
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

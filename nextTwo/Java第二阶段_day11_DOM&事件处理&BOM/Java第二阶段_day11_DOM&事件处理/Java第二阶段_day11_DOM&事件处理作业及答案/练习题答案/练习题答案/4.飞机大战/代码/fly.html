@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>飞机大战</title>
+	</head>
+	<body>
+		<!-- 创建背景地图 -->
+		<div id="backmap" style="width: 700px;height: 400px;background: url(img/background.jpg);" >
+			
+			<!-- 创建飞机元素 默认左上角定点位置 -->
+			<img id="fly" src="img/ship_center.png" style="margin: 0px; width: 50px;height: 50px;position: absolute;" />
+			
+		</div>
+		
+		
+		<script>
+			// 捕获按键事件
+			window.onkeydown = function(event){
+				// 获取飞机元素
+				var fly = document.getElementById("fly");
+				// 获取地图对象
+				var backmap = document.getElementById("backmap");
+				// 当按键的keycode是39时
+				if(event.keyCode == 39){
+					// 获取飞机样式中的左边距的位置
+					var left = parseInt(fly.style.marginLeft)  ;
+					// 每次按下左边距加10像素
+					left += 10 ;
+					// 当左边距没有超过边界时设置到样式上去
+					if(left <= 650){
+						fly.style.marginLeft = left + "px";
+					}
+				}
+				// 当按键的keycode是37时
+				if(event.keyCode == 37){
+					// 获取飞机样式中的左边距的位置
+					var left = parseInt(fly.style.marginLeft)  ;
+					// 每次按下左边距减去10像素
+					left -= 10 ;
+					// 当左边距没有超过边界时让样式生效
+					if(left >= 0){
+						fly.style.marginLeft = left + "px";
+					}
+				}
+				if(event.keyCode == 40){
+					var top = parseInt(fly.style.marginTop)  ;
+					top += 10 ;
+					if(top <= 350){
+						fly.style.marginTop = top + "px";
+					}
+				}
+				if(event.keyCode == 38){
+					var top = parseInt(fly.style.marginTop)  ;
+					top -= 10 ;
+					if(top >= 0){
+						fly.style.marginTop = top + "px";
+					}
+				}
+				// 当按键的keycode是65的时候
+				if(event.keyCode == 65){  
+					// 创建子弹元素
+					var buddle = document.createElement("img");
+					// 设置元素的src属性
+					buddle.src = "img/bubble.gif";
+					// 计算子弹的初始位置
+					var top = parseInt(fly.style.marginTop) + 22 ;
+					var left = parseInt(fly.style.marginLeft) + 50 ;
+					// 设置字段的大小跟初始位置
+					buddle.style.width = "6px";
+					buddle.style.height = "6px";
+					buddle.style.marginTop = top + "px" ;
+					buddle.style.marginLeft = left + "px" ;
+					buddle.style.position = "absolute";
+					// 把字段元素加入到地图元素中
+					backmap.appendChild(buddle);
+					
+					// 设置定时器
+					var inter = setInterval(function(){
+						// 每次获取子弹的左边距
+						var buddleLeft = parseInt(buddle.style.marginLeft);
+						// 每次右移动10个像素
+						buddleLeft += 10 ;
+						// 当没有超过范围的时候让样式生效
+						if(buddleLeft<700){
+							buddle.style.marginLeft= buddleLeft + "px";
+						}else{
+							// 当超过范围的时候清除此定时器,并删除子弹元素
+							clearInterval(inter);
+							backmap.removeChild(buddle);
+						}
+					} , 100);
+					
+				}
+			}
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,50 @@
+
+1．在样式表中，用户设置网页背景颜色的属性是（）
+A．bgcolor
+B．background
+C．background-color
+D．becolor
+答案：C
+
+2. 如果要为网页链接一个外部样式表文件，应使用一下（）标记符
+   A． A
+   B． Link
+   C． style
+   D． css
+答案：B
+
+3.  在HTML中，下列几条关于样式表优点的说法错误的是（）
+   A． 样式表可以改变浏览器的默认显示风格
+   B． 样式表可以使页面内容和显示样式分离
+   C． 样式表可以重用，并且样式更改后，使用该样式表的文档会做相应的修改
+   D． 一个样式表对应一个HMTL文档
+答案：D
+
+4. 在HTML中，下面（）语句可以将标题的颜色设置为绿色
+   A. <h1  color:green>
+   B. <h1 font=green>
+   C. <h1 style=color:green;”>
+   D. <h1 style：green>
+答案：C
+
+
+5. 外部样式表的文件扩展名是（选一项）
+  A. .OSS
+  B. .DSS
+  C. .CSS
+  D. .ASA
+答案：C
+
+6.以下哪个选项是设置底边框的（ ）
+A.border-bottom
+B.border-top
+C.border-left
+D.border-right
+答案：A
+
+7.下列哪个CSS属性能够设置盒子模型的填充为10、20、30、40、(顺时针方向)（ ）
+A. padding:10px 20px 30px 40px
+B. padding:40px 30px 20px 10px 
+C. padding:10px 40px 30px 20px 
+D. padding:20px 10px 40px 30px 
+答案：A

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Jquery实现Ajax</title>
+<script type="text/javascript" src="js/jquery1.12.4.min.js"></script>
+<script type="text/javascript">
+	//点击请求按钮执行
+	function fun() {
+	
+		//使用$.ajax()发送异步请求
+		$.ajax({
+			url:"ajaxServlet" , // 请求路径
+			type:"POST" , //请求方式
+			//data: "username=jack&age=23",//请求参数
+			data:{"username":"wangcai","age":18},
+			 success:function (data) {//响应成功后的回调函数
+			         alert(data);
+			 },
+			 error:function () {//表示如果请求响应出现错误，会执行的回调函数
+                 alert("出错啦...")
+             },
+			 dataType:"text"//设置接受到的响应数据的格式
+		});
+
+	}
+</script>
+</head>
+<body>
+	<input type="button" value="发送Ajax请求" onclick="fun();">
+	<input type="text" name="username">
+</body>
+</html>

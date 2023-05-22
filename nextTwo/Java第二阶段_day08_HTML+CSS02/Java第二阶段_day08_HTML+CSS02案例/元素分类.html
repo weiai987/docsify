@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .div1{
+            width: 500px;
+            height: 500px;
+            background-color: red;
+            color: white;
+            /* 当前的元素  变成了行级元素 并具有行级元素的特征 */
+            /* display: inline; */
+            /* 改变成为行内块 */
+            /* display: inline-block; */
+            display: none;
+        }
+        .div2{
+            width: 500px;
+            height: 500px;
+            background-color: black;
+            color: white;
+            /* display: inline; */
+            /* display: inline-block; */
+        }
+
+        .span1{
+            width: 500px;
+            height: 500px;
+            background-color:pink;
+            color: white;
+            /* 当前的元素  变成了块级元素 并具有块级元素的特征 */
+            display: block;
+            /* display: none; */
+        }
+    </style>
+</head>
+<body>
+    <div class="div1">123</div>
+    <div class="div2">456</div>
+    <span class="span1">789</span>
+</body>
+</html>

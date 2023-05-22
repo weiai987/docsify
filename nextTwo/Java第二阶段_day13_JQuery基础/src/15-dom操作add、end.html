@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<!-- <script src="https://cdn.bootcss.com/jquery/1.11.3/jquery.js"></script> -->
+	<script src="08-myjQuery.js"></script>
+</head>
+<body>
+	<div class="wrapper">
+		<ul class="demo">
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</div>
+	<ul>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+	<script>
+		// 想要给.wrapper和ul都有样式
+		// $(".wrapper")
+		// 	.css({position : "absolute"})
+		// 	.find("ul")
+		// 	.css({position : "absolute"})
+
+		//add()  集合操作
+		// $(".wrapper")
+		// 	.add("ul")
+		// 	.css({position : "absolute"})
+
+		// end()  回退操作   类似于里面的prevObject属性
+		// $(".wrapper")
+		// 	.css({position : "absolute"})
+		// 	.find("ul")
+		// 	.css({position : "absolute"})
+		// 	.end()
+		// 	.css({position : "relative"})
+
+
+		// 源码中测试add中也是含有end方法的
+		// $(".wrapper")
+		// 	.add(".ul")
+		// 	.css({position : "relative"})
+		// 	.end()
+		// 	.css({background : "red"})
+
+
+		// 测试myjQuery
+		console.log($(".wrapper").add(".demo").end().eq(0).css({"color" : "red"}))
+	</script>
+</body>
+</html>

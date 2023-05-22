@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+       // 概念分析：分解质因数只针对合数。每个合数都可以写成几个质数相乘的形式。
+       // 程式分析：如果是质数，分解质因数就是其本身。
+       //  这里我对2单独考虑，2既不是属于合数也不是属于质数。所以我对用户输入值要求大于2的数。（用if··else语句实现）
+       //  求一个数分解质因数，要从最小的质数除起(那么就不用prime的函数调用方法)
+       //  设置一个for循环，把他所有质数可能值遍历一遍。这种算法较为高效。
+       //  一直除到结果为质数为止。
+       var input=+prompt("请输入您需要分解因数的数字：");
+        //textNum变量至关重要，如果没有他，比如5  只会输出5=5；不太好看。所以，设置一个变量testNum,
+    //只要看testNum就知道他是否本身就是质数啦
+    var testNum=input;
+    var n=input;
+    if(n<2)
+    {
+        console.log("Warning！请输入大于2的数！");
+    }else {
+        console.log(n + "=");
+
+        for (var i = 2; i <= Math.sqrt(n); i++)        //这里时间复杂度为O（根号n）,大大降低数量级。
+        {
+
+            while (n % i == 0) {
+                n = n / i;
+                console.log(i + " ");
+                if (n != 1) {
+                    console.log("*");
+                }
+            }
+        }
+        //prime质数出口
+        if(n==testNum){
+            console.log("1* "+n);
+        }
+        if (n!=1 && n!=testNum) {
+            console.log(n);
+        }
+    }
+
+    // 方法2
+    var num = 900;
+var temp = num;
+var msg = num + " = ";
+for (var i = 2; i <= temp; i++){
+    if (temp % i == 0){
+        if (i == temp){ // 最后一次的时候不要再添加 * 号
+            msg += i;
+        }else{
+            msg += i + " * ";
+        }
+        temp = temp / i;
+        i--;
+    }
+}
+console.log(msg);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

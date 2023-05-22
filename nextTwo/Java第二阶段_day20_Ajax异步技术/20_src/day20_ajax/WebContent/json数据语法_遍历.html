@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+      //遍历JSON
+      var  p ={"name": "如花", "age": 18, "sex": true};
+      for(var key in p){
+    	  
+    	  alert("键:"+key+"-"+"值："+p[key]);
+      }
+      
+      //遍历 json对象数组
+      var ps = [{"name": "如花", "age": 18, "sex": true},
+            {"name": "旺财", "age": 19, "sex": true},
+            {"name": "小强", "age": 20, "sex": false}];
+
+        //获取person对象中所有的键和值
+        //for in 循环
+        /*for(var i in person){
+        	//i就是数组中元素的索引
+            alert(i+":"+person[i]);
+        }*/
+
+       //获取ps中的所有值
+        for (var i = 0; i < ps.length; i++) {
+            var p = ps[i];
+            for(var key in p){
+                alert(key+":"+p[key]);
+            }
+        }
+
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+       <script>
+    var a=Number(prompt("请输入四位整数"));
+    function data() {
+        var b, c, d, e;
+        b= parseInt(a/1000);
+        c= parseInt((a-b*1000)/100);
+        d= parseInt((a - b * 1000 - c * 100) / 10);
+        e= a-b*1000 - c * 100 - d * 10;
+        code(b, c, d, e);
+    }
+    function code(z,x,n,v) {
+        console.log(String((n+5)%10)+String((x+5)%10)+String((z+5)%10)+String((v+5)%10));
+    }
+
+    if(!isNaN(a)&& a>999){
+
+        data();
+    }
+</script>
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

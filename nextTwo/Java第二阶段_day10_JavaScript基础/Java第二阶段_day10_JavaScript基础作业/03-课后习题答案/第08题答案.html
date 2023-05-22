@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        
+    //count累加器，作为换行计数器
+    var count;
+    //外层for循环是遍历1--1000数字的作用，变量i就是各个数
+    for(var i=1;i<1000;i++){
+        //Position of variate is important！！！
+        var sum=0;
+        //内层for循环是找出其数的所有因子,变量j就是各个因子
+        for(var j=1;j<i;j++){
+            if(i%j==0){
+                sum+=j;
+            }
+        }
+        //判断因子和是否等于其本身number值，若是则是完数并输出。
+        if(sum==i){
+            console.log(i+" &nbsp;");
+            //以下代码是用来5个换行，但没用到，因为1000内数只有三个是完数。
+            count++;
+            if(count%5 == 0){
+                console.log("<br>");
+                count=0;
+            }
+        }
+
+    }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

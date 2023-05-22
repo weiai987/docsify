@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 表单 
+        表单提交：  点了提交按钮就会跳转到新的页面
+            form    代表的就是一个表单元素
+                属性：
+                    action    设置提交表单的地址
+                    method    设置表单的提交方式
+                         get    显示传输
+                         post   隐式传输
+    -->
+    <form action="http://www.baidu.com" method="POST" >
+        <!-- 表单控件 
+                type  类型
+                    text   普通文本输入框
+                    password   密码框
+                    image  图片提交
+                    fill   文件上传
+                value  值
+                name   名称
+                    -->
+        <!-- 关联标签
+                label
+                    属性  ： for
+                第一种用法   
+                    1.给要关联的控件加上一个id
+                    2.通过for属性连接id
+                第二种方法
+                    直接包裹input元素
+
+        -->
+        <label for="user">用户名：</label>
+        <input type="text" id="user" placeholder="请输入5-10包含字母的用户名">
+       <br>
+       <label>
+        密&emsp;码： <input type="password">
+       </label>
+       <br>
+       性&emsp;别：男<input type="radio" name="sex" />女<input type="radio" name="sex">
+       <br>
+       爱&emsp;好：rap<input type="checkbox"/>   篮球<input type="checkbox"/>  吃<input type="checkbox"/>
+       <br/>
+       邮箱:<input type="email"/><br/>
+       电话:<input type="tel"/><br/>
+       <!-- 文本域 
+              文本域的大小不取决于宽高
+               而是     行数    列数
+               cols   列数
+               rows   行数
+            -->
+       个性签名：<textarea cols="20" rows="20"></textarea>
+       <br>
+       文件:<input type="file"/>
+       <br>
+       <!-- 下拉菜单 
+                列表项
+                size   :  默认选项的数量  如果取值大于1的话 则成为一个滚动列表
+                selected  默认选中
+        -->
+       <select  size="4" multiple="multiple">
+            <option value="">美国</option>  
+            <option value="" selected>中国</option>
+            <option value="">伊拉克</option>
+            <option value="">苏联</option>
+       </select>
+       <input type="submit" value="注册">
+       <input type="reset" value="重置">
+       <input type="image" src="image/1.jpg" />
+    </form>
+</body>
+</html>

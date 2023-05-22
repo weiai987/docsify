@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			#input{
+				outline: none;
+				width: 200px;
+				height: 40px;
+				border: 1px 5F9EA0 solid;
+				padding-left: 20px;
+				font-size: 20px;
+			}
+			
+			#eye{
+				width: 25px;
+				position: absolute;
+				left: 190px;
+				top:15px;
+				cursor: pointer;
+				display: none;
+				
+			}
+			
+		</style>
+	</head>
+	<body>
+		
+		<div style="position: relative;">
+			<input id="input" type="password" />
+			<img id="eye" src="img/eye.png" />
+		</div>
+		
+		
+		<script>
+			
+			var eye = document.getElementById("eye");
+			var input = document.getElementById("input");
+			
+			input.oninput = function(){
+				if(this.value){
+					eye.style.display = "block";
+				}else{
+					eye.style.display = "none";
+				}
+				console.log(this.value);
+			}
+			
+			
+			eye.onmousedown = function(){
+				input.type = "text";
+			}
+			
+			eye.onmouseup = function(){
+				input.type = "password";
+				input.focus();
+			}
+			
+			
+		</script>
+		
+		
+	</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>五角星评分案例</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .comment {
+            font-size: 40px;
+            color: red;
+        }
+
+        .comment li {
+            float: left;
+            cursor: pointer;
+        }
+
+        ul {
+            list-style: none;
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="comment">
+        <li>☆</li>
+        <li>☆</li>
+        <li>☆</li>
+        <li>☆</li>
+        <li>☆</li>
+    </ul>
+
+<script src="jquery-1.12.4.js"></script>
+<script>
+  $(function () {
+    //需求1:鼠标移入到li标签上,当前li标签和他之前的li标签显示实心五角心,后面的li显示空心五角心.
+    //需求2:鼠标离开li,所有的li都变成空心.
+    //需求3:点击li,鼠标离开后,刚才点击的那个li和之前的li都变成实心五角心,后面空心五角心.
+
+    //prev();上一个兄弟.
+    //prevAll(); 之前所有的兄弟
+    //next();下一个兄弟
+    //nextAll();之后所有的兄弟.
+
+    //声明2个变量,用来记录实心五角心和空心五角心.
+    var sx_wjx = "★";
+    var kx_wjx = "☆";
+
+    //需求1:
+    $('.comment li').on('mouseenter', function () {
+      // $(this).text(sx_wjx).prevAll().text(sx_wjx);
+      // $(this).nextAll().text(kx_wjx);
+
+      //下面这句链式编程达不到效果.
+      //$(this).text('★').prevAll().text('★').nextAll().text('☆');
+
+      //end()方法可以返回到上一个状态.
+      //console.log($(this).text('★').prevAll().text('★').end());
+
+      //下面这句话是可以实现效果的.
+      $(this).text('★').prevAll().text('★').end().nextAll().text('☆');
+
+
+    }).on('mouseleave', function () {
+      //需求2:
+      $('.comment li').text(kx_wjx);
+
+      //通过刚才点击添加的那个独一无二的属性来判断刚才点击的是哪一个li.
+      $('.comment li[sb="dsb"]').text(sx_wjx).prevAll().text(sx_wjx);
+
+    }).on('click', function () {
+      //需求3: 记录你点击的是哪一个li标签.
+      //给当前被点击的这个li,添加一个独一无二的属性.
+      $(this).attr('sb','dsb').siblings('li').removeAttr('sb');
+    });
+
+
+  });
+</script>
+</body>
+</html>

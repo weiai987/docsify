@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+       //驮100石粮食，大马需要50匹
+              for(var a=0;a<=50;a++){
+                  //驮100石粮食，中马需要100匹
+                   for(var b=0;b<=100;b++){
+                       //驮100石粮食，只需要100减去大马和中马的数量就是小马的数量
+                       var c=100-a-b;
+                       if((a+b+c==100) && (2*a+b+c/2==100)){
+                           document.write("大马："+a+"中马："+b+"小马："+c+"<hr />");
+                       }
+                  }
+ 　　  　}
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,18 @@
+-- 插入数据
+INSERT INTO student (id, NAME, age, sex) VALUES (1, '张三', 20, '男');
+INSERT INTO student (NAME, id, age, sex, address) VALUES ('李四', 2, 23, '女', '广州');
+INSERT INTO student VALUES (3, '王五', 18, '男', '北京');
+
+select str_to_date('08.09.2008 08:09:30', '%m.%d.%Y %h:%i:%s'); -- 2008-08-09 08:09:30
+select maketime(12,15,30); -- '12:15:30'
+select date_format('2008-08-08 22:23:01', '%Y-%m-%d %H:%i:%s');  -- 20080808222301
+
+INSERT INTO student2 SELECT * FROM student;
+
+-- 修改数据
+UPDATE student SET sex='男';
+UPDATE student SET sex='男' WHERE id=2;
+
+-- 删除数据
+DELETE FROM student;
+DELETE FROM student WHERE id=3;

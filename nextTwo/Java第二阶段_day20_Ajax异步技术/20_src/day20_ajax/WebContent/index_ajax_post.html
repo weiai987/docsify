@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Jquery实现Ajax_post</title>
+<script type="text/javascript" src="js/jquery1.12.4.min.js"></script>
+<script type="text/javascript">
+	//点击请求按钮执行
+	function fun() {
+
+		//使用$.post()发送异步请求
+		  $.post("ajaxServlet",{"username":"wangcai_post"},function (data) {
+              alert(data);
+          },"text");
+	}
+</script>
+</head>
+<body>
+	<input type="button" value="发送Ajax请求" onclick="fun();">
+	<input type="text" name="username">
+</body>
+</html>

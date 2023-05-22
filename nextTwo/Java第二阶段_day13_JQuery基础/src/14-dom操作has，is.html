@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+		<script src="https://cdn.bootcss.com/jquery/1.11.3/jquery.js"></script>
+	</head>
+	<body>
+		<ul>
+			<li>
+				<ul>
+					<li>1</li>
+					<li>2</li>
+					<li>3</li>
+					<li>4</li>
+					<li>5</li>
+				</ul>
+			</li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+
+		<div class="wrapper">
+			<span class="demo">span-1</span>
+			<span class="demo">span-2</span>
+			<p class="demo">p-1</p>
+			<span class="demo">span-3</span>
+		</div>
+
+
+		<ul>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+		</ul>
+		<script>
+			//给后代中有ul的li加样式
+
+			// has()
+			$("li").has("ul").css({background : "red"});
+
+			// is() 返回一个boolean值
+			var flag = $(".wrapper .demo").is("span"); //是否含有span
+			console.log(flag);
+
+			// is使用场景：
+			// 当点击li的时候输出li的内容，当点击ul的时候，输出整体的内容
+			$("ul").click(function(e){
+				if( $(e.target).is("li") ){
+					console.log( $(e.target).text() )
+				}else{
+					console.log( $(this).text() )
+				}
+			})
+
+		</script>
+	</body>
+</html>

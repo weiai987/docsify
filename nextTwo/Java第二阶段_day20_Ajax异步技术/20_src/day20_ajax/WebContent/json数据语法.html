@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //1.基本的JSON对象
+        var person = {"name": "如花", age: 18, 'sex': true};
+
+        //获取name的值
+        //var name = person.name;
+        var name = person["name"];
+       // alert(name);
+       
+       // 2.嵌套 JSON 对象
+         var addr = {"address": {"province":"湖北","city":"武汉"}};
+         var city =  addr.address.city;
+        // alert(city);
+         
+        //3.JSON值为数组   {}———> []
+        var persons = {
+            "persons": [
+                {"name": "如花", "age": 18, "sex": true},
+                {"name": "旺财", "age": 19, "sex": true},
+                {"name": "小强", "age": 20, "sex": false}
+               ]
+        };
+       // alert(persons);
+       //获取小强
+        var name1 = persons.persons[2].name;
+       // alert(name1);
+
+
+        //4.JSON对象数组   []———> {}
+        var ps = [{"name": "如花", "age": 18, "sex": true},
+            {"name": "旺财", "age": 19, "sex": true},
+            {"name": "小强", "age": 20, "sex": false}];
+        //获取旺财
+        //alert(ps);
+        alert(ps[1].name);
+
+
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>

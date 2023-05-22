@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		
+		<script>
+			
+			var i = 1 ;
+			
+//			alert(window.i);
+			
+//			var result = confirm("今天你吃早饭了吗？");
+//			if(result){
+//				alert("保持身材，不要长得像张炜林一样胖。");
+//			}else{
+//				alert("不吃早饭对身体不好，不要像赵恩阳一样。");
+//			}
+			
+//			var result = prompt("你今天学习了吗？","没有");
+//			alert(result);
+
+			
+			var i = 0 ;
+//			function print(){
+//				document.write(parseInt(Math.random()*10));
+//				var timer = setTimeout(print,10);
+//				
+//				i++;
+//				
+//				if(i == 200){
+//					clearTimeout(timer);
+//				}
+//			}
+//			setTimeout(print,10);
+
+			function print(){
+				document.write(parseInt(Math.random()*10));
+				i++;
+				if(i == 200){
+					clearInterval(timer);
+					window.open("https://www.bailiban.com");
+				}
+			}
+			var timer = setInterval(print,10);
+
+			
+		</script>
+		
+		
+		
+	</body>
+</html>

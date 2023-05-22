@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title>标题</title>
+</head>
+<body>
+<p></p>
+<div id="father">
+    <div>
+      <span>span1</span>
+      <span>span2</span>
+      <span>span3</span>
+    </div>
+
+    <div>
+      <b>1</b>
+      <div>div1</div>
+      <div>div2</div>
+      <div>div3</div>
+      <p></p>
+    </div>
+
+    <div></div>
+
+    <p></p>
+    <p></p>
+    <p></p>
+
+    <span>sss1</span>
+</div>
+
+<script src="jquery-1.12.4.js"></script>
+<script>
+  $(function () {
+    //需求1:查找到id为father的这个div的所有子代div.
+    console.log($('#father>div'));
+
+    //需求2:查找到id为father的这个div的所有子代div,以及所有子代p.
+    //console.log($('#father>div,p'));//这样不能,这样获取到的是id为father的div的子div以及页面上所有的p.
+    console.log($('#father>div , #father>p'));
+
+    //需求3:查找id为father这个div的所有后代div.
+    console.log($('#father div'));
+
+  });
+</script>
+</body>
+</html>

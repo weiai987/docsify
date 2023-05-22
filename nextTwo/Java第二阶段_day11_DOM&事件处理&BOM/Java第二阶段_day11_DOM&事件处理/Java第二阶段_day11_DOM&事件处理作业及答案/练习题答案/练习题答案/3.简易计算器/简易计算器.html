@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="text" id="one"  />
+		<select id="sel">
+			<option>+</option>
+			<option>-</option>
+			<option>*</option>
+			<option>/</option>
+		</select>
+		<input type="text" id="two"/>
+		<input type="button" value="计算" onclick="num()" />
+		<script>
+			function num(){
+				var one=document.getElementById("one").value;
+				var two=document.getElementById("two").value;
+				
+				var sel= document.getElementById("sel").value;
+				var result =  one + sel + two + "=";
+				if(sel=="+"){
+					alert(result += parseInt(one)+parseInt(two));
+				}
+				if(sel=="-"){
+					alert(result += parseInt(one)-parseInt(two));
+				}
+				if(sel=="*"){
+					alert(result += parseInt(one)*parseInt(two));
+				}
+				if(sel=="/"){
+					alert(result += parseInt(one)/parseInt(two));
+				}
+			}
+			
+		</script>
+	</body>
+</html>

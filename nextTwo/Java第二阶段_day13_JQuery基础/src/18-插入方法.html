@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+		<script src="https://cdn.bootcss.com/jquery/1.11.3/jquery.js"></script>
+	</head>
+	<body>
+		<ul id="city">
+			<li id="bj">北京</li>
+			<li id="tj">天津</li>
+			<li id="nj">南京</li>
+		</ul>
+		<ul id="game">
+			<li id="cs">反恐精英</li>
+			<li id="xj">星际争霸</li>
+			<li id="ms">魔兽世界</li>
+		</ul>
+		<script>
+			// 这一系列的方法就是为了完成链式调用的方便
+			// 所有的都是剪贴的操作
+
+			// .insertAfter() 将前面的插入到后面成下个兄弟元素
+			// $("#tj").insertAfter($("#xj"));
+
+			// .after()  将后面的插入到前面下一个兄弟元素
+			// $("#tj").after($("#xj"));
+
+			// .insertBefore() 将前面的插入到后面成上一个兄弟元素
+			// $("#tj").insertBefore($("#xj"));
+
+			// .before() 将后面的插入到前面上一个兄弟元素
+			// $("#tj").before($("#xj"));
+
+			// .appendTo()  将前面的插入到后面的里面成为最后一个子节点
+			// $("#tj").appendTo($("#xj"));
+
+			// .append()  将后面的插入到前面的里面成为最后一个子节点
+			// $("#tj").append($("#xj"));
+
+			// .prependTo() 将前面的插入到后面的里面成为第一个子节点
+			// $("#tj").prependTo($("#xj"));
+
+			// .prepend() 将后面的插入到前面的里面成为第一个子节点
+			// $("#tj").prepend($("#xj"));
+
+		</script>
+	</body>
+</html>

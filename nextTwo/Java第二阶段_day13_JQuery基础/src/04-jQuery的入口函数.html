@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title>标题</title>
+
+</head>
+<body>
+
+<script src="jquery-1.12.4.js"></script>
+<script>
+  //1.jQuery的入口函数.
+  //写法1:
+  // $(document).ready(function () {
+  //   console.log("这是一个jQuery入口函数");
+  // });
+
+  //写法2:
+  // $(function () {
+  //   console.log("这又是一个jQuery入口函数的写法");
+  // });
+
+
+  //2.jQuery的入口函数和原生js的入口函数(window.onload)的区别.
+  //a.原生js的入口函数不能写多个; jQuery入口函数可以写多个.
+  //b.执行时机不同:
+  //  原生js入口函数,要等待页面上所有的资源(外部css/js文件,dom树加载,图片...)都加载完毕后才执行.
+  //  jQuery入口函数只需要等待页面dom树加载完毕后执行.
+
+
+
+  
+    $(function () {
+    alert('jQuery入口函数2');
+  });
+
+  $(function () {
+    alert('jQuery入口函数1');
+  });
+
+  // window.onload = function () {
+  //   alert('原生js入口函数');
+  // } 
+
+
+
+
+  //原生js入口函数.
+  //只要是给window添加load事件,那就是原生js入口函数.
+  // $(window).load(function () {
+  //   alert("入口函数")
+  // });
+
+
+
+
+</script>
+</body>
+</html>

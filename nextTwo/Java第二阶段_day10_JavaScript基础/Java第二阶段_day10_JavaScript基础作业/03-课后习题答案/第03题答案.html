@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        var num1=+prompt("输入第一个数：");
+    var num2=+prompt("输入第二个数：");
+    //判断两个数的大小
+    //变量：divident放大数，divisor放小数，remainder放余数；
+    if(num1>num2){
+        divident=num1;
+        divisor=num2;
+    }else{
+        divident=num2;
+        divisor=num1;
+    }
+    //进行计算最大公约数
+    //基本思想就是辗转相除法（大数除以小数，小数除以上一步的余数，知道余数为0）
+    while(divident%divisor != 0){
+        remainder=divident%divisor;
+        divident=divisor;
+        divisor=remainder;
+    }
+    //变量：gcd最大公约数;lcm最大公倍数；
+    //求出了最大公约数，那么最大公约数基本思想就是：两数的成绩除以最大公约数。
+    var gcd=divisor;
+    var lcm=num1*num2/gcd;
+
+    //输出页面
+    console.log("您输入的两数为："+num1 +" "+num2+"<br>");
+    console.log("两数最大公约数为： "+gcd+"<br>");
+    console.log("两数最小公倍数为： "+lcm+"<br>");
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

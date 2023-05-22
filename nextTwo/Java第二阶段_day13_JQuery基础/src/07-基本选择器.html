@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title>基本选择器</title>
+  <script src="jquery-1.12.4.js"></script>
+  <script>
+    $(function () {
+     // 基本选择器   和css里面的选择器是一样的
+      //  id选择器            $('#id')
+      //  类选择器            $(".类名")
+      //  标签选择器          $("标签名")
+      //  并集选择器          $('.box,.box2')
+      //  交集选择器          $('li.current')
+      
+
+      //抗日开始，action      
+      //首先，大当家的立威  把自己变大
+      // id选择器
+      // 格式：$("#id")
+      // 作用：通过id来获取页面中的元素
+      $('#one').css('fontSize','40px');
+       
+
+      // 自己立了为变大了  也不能寒酸了二当家的  所以把二当家的也变大一点
+      // 类选择器
+      // 格式：$(".class");
+      // 作用：获取页面中一类元素，通过class属性来获取
+      // jQuery中支持隐式迭代，迭代就是遍历的意思
+      $('.two').css('fontSize','30px');
+	  
+      
+      // 有一天官兵来剿匪  到了紧急时刻  不算是伙夫还是哨兵 通通上战场
+      //要把所有的并都派上去,上战场，前线的兵背景色都是绿色。
+      // 标签选择器
+      // 格式；$("标签名");
+      // 通过标签来获取对应元素
+      $('li').css('backgroundColor','green');
+      
+
+      //打不赢就要跑嘛， 所以装备要带足 吃饭的家伙事不能少, 伙夫背着粮食  锅碗瓢盆, 所以伙夫和卫生员是没有战斗力的，应该撤下来。
+      //需要把伙夫和医生的背景色改成白色。
+      // 伙夫和卫生员也想着要帮忙为抗日做贡献。
+      // 并集选择器
+      // 格式：$("selector1,selector2,...");
+      // 功能：获取多个选择器的并集
+      $('.hf,.doctor').css('backgroundColor','white');
+      
+
+
+      //现在，突然发现官兵很快攻进了老巢。为什么呢？现在在土匪里面出现内奸。
+      //现在把土匪里面的内奸找出来，不能干扰到老百姓  而且老百姓里面也有间隙 但是为了不打扰百姓 咱只招土匪兵里面的间隙
+      // 交集选择器   li.current
+      // 格式： $("selector1selector2");注意，中间没有任何的空格
+      // 获取两个选择器之间的交集。
+      $('li.nj').css('backgroundColor','green');
+      
+    })
+  
+  </script>
+</head>
+<body>
+<div>
+  <ul>
+    <li id="one">我是大当家的</li>
+  </ul>
+  <!-- 东山头 -->
+  <ul id="east">
+    <li class="two">我是二把手</li>
+    <li>哨兵</li>
+    <li>土匪蛋子</li>
+    <li>土匪蛋子</li>
+    <li>土匪蛋子</li>
+    <li class="hf">伙夫</li>
+    <li class="doctor">医生</li>
+  </ul>
+  <!-- 西山头 -->
+  <ul id="west">
+    <li class="two">我是二把手</li>
+    <li>哨兵</li>
+    <li class="nj">土匪蛋子</li>
+    <li>土匪蛋子</li>
+    <li>土匪蛋子</li>
+    <li class="hf">伙夫</li>
+    <li class="doctor">医生</li>
+  </ul>
+</div>
+<div>
+  <p class="nj">老百姓</p>
+  
+  <p class="nj">老百姓</p>
+  
+  <p>老百姓</p>
+  
+  <p>老百姓</p>
+  
+  <p>老百姓</p>
+  
+  <p>老百姓</p>
+  
+  <p>老百姓</p>
+</div>
+
+</body>
+</html>

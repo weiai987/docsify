@@ -1,0 +1,145 @@
+-- 建库
+CREATE DATABASE db1;
+CREATE DATABASE IF NOT EXISTS db2;
+CREATE DATABASE db2 CHARACTER SET gbk;
+
+-- 查看数据库
+SHOW databases;
+SHOW CREATE DATABASE 数据库名;
+
+-- 修改数据库编码
+ALTER DATABASE db3 DEFAULT CHARACTER SET utf8;
+
+-- 删除数据库
+DROP DATABASE db2;
+
+-- 使用数据库
+use test;
+SELECT DATABASE();
+
+-- 建数据表
+create table test1 (
+c1 TINYINT,
+c2 tinyint UNSIGNED,
+c3 tinyint ZEROFILL );
+
+-- 测试数值数据类型
+create table test4 (
+  f1 float,
+  f2 float(5, 2),
+  f3 float(16，4)
+);
+
+insert into test4 values (123.456789, 123.456789, 123.456789);
+insert into test4 values (1234.56789, 1234.56789, 1234.56789);
+insert into test4 values (12345.6789, 12345.6789, 12345.6789);
+insert into test4 values (123456.789, 123456.789, 123456.789);
+insert into test4 values (1234567.89, 1234567.89, 1234567.89);
+insert into test4 values (12345678.9, 12345678.9, 12345678.9);
+insert into test4 values (123456789, 123456789, 123456789);
+select * from test4;
+
+drop table test5;
+create table test5 (
+  d1 double,
+  d2 double(5, 2),
+  d3 double(16, 4)
+);
+
+insert into test5 values (123.456789, 123.456789, 123.456789);
+insert into test5 values (1234.56789, 1234.56789, 1234.56789);
+insert into test5 values (12345.6789, 12345.6789, 12345.6789);
+insert into test5 values (123456.789, 123456.789, 123456.789);
+insert into test5 values (1234567.89, 1234567.89, 1234567.89);
+insert into test5 values (12345678.9, 12345678.9, 12345678.9);
+insert into test5 values (123456789, 123456789, 123456789);
+
+drop table test6;
+create table test6 (
+  d1 decimal,
+  d2 decimal(6, 2),
+  d3 decimal(32, 4)
+);
+insert into test6 values (123.456789, 123.456789, 123.456789);
+insert into test6 values (1234.56789, 1234.56789, 1234.56789);
+insert into test6 values (12345.6789, 12345.6789, 12345.6789);
+insert into test6 values (123456.789, 123456.789, 123456.789);
+insert into test6 values (1234567.89, 1234567.89, 1234567.89);
+insert into test6 values (12345678.9, 12345678.9, 12345678.9);
+
+-- 使用日期时间类型
+drop table dt01;
+create table dt01(
+  d1 year,
+  d2 date,
+  d3 time,
+  d4 datetime,
+  d5 timestamp
+);
+
+insert into dt01 values ('2020', '2020-3-4', '3:4:5','2020-3-4 3:4:5', null);
+insert into dt01 values ('2020', '20200304', '131415','20200304131415', CURRENT_TIMESTAMP);
+insert into dt01 values ('2020', '2020-3-4', '3:4:5','2020-3-4 3:4:5', CURRENT_TIMESTAMP);
+insert into dt01 values ('2020', '2020:3:4', '03:04:05','2020:3:4 3:4:5', CURRENT_TIMESTAMP);
+insert into dt01 values ('2020', '2020-3-4', '3:4:5',
+STR_TO_DATE('2019-12-5 7:8:9', '%Y-%m-%d %H:%i:%s'), CURRENT_TIMESTAMP);
+insert into dt01 values ('2020', '2020-3-4', '3:4:5',
+STR_TO_DATE('2019*12*5 7&8&9', '%Y*%m*%d %H&%i&%s'), CURRENT_TIMESTAMP);
+insert into dt01 values ('2020', '2020-3-4', '3:4:5',
+STR_TO_DATE('2019年12月12日 7时8分9秒', '%Y年%m月%d日 %H时%i分%s秒'), CURRENT_TIMESTAMP);
+
+-- 日期时间与字符串类型互相转换
+select date_format(now(), ‘%Y-%m-%d %H:%i:%s’);
+STR_TO_DATE('2019-12-5 7:8:9', '%Y-%m-%d %H:%i:%s');
+
+
+-- 使用字符串类型
+create table test7 (
+  test_char varchar(21845)
+) character set utf8;
+create table test7 (
+  test_char varchar(32766)
+) character set gbk;
+create table test7 (
+  test_char varchar(16383)
+) character set utf8mb4;
+
+
+create table test7 (
+  c1 char(100),
+  c2 varchar(21845)
+) character set utf8;
+
+create table test7 (
+  c1 char(100),
+  c2 varchar(21744)
+) character set utf8;
+
+-- 使用枚举类型
+create table student (
+  s char(1),
+  sex enum('男', '女')
+	) character set utf8mb4;
+insert into student values('男','男');
+insert into student values('女','女');
+select * from student;
+select s+0,  sex+0 from student;
+
+-- 使用集合set类型
+CREATE TABLE set_t(
+a SET('1','2','3','4','5')
+);
+desc set_t;
+INSERT set_t VALUES('1');
+INSERT set_t VALUES('1,2,3');
+
+-- 修改表结构
+ALTER TABLE student ADD remark VARCHAR(20);
+ALTER TABLE student MODIFY remark VARCHAR(100);
+ALTER TABLE student CHANGE remark intro varchar(30);
+ALTER TABLE student DROP intro;
+
+-- 修改表名
+RENAME TABLE student TO student2;
+-- 修改表字符集
+ALTER TABLE student2 character set gbk;

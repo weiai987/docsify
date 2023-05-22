@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title>标题</title>
+</head>
+<body>
+<input type="button" value="获取" id="getBtn"/>
+<input type="button" value="设置" id="setBtn"/>
+
+<div id="div1">我是一个div标签
+  <p>我是一个p标签 <span>span1</span></p>
+</div>
+
+<div>我是一个div2标签
+  <p>我是一个p2标签 <span>span2</span></p>
+</div>
+
+
+<script src="jquery-1.12.4.js"></script>
+<script>
+  $(function () {
+    //text()方法是用来设置/获取文本的.
+
+    //1.获取文本.
+    //text(); 不给参数
+    $('#getBtn').click(function () {
+      //1.1 获取id为div1的文本
+      //所有的文本都被获取到了.
+      // console.log($('#div1').text());
+
+      //1.2 获取标签为div的文本.
+      //获取到每一个div的文本.
+      console.log($('div').text()); //隐式迭代,偷偷的遍历.
+    });
+
+
+    //2.设置文本.
+    //text(需要设置的文本);  给参数
+    //会覆盖元素的内容.
+    //如果设置的文本中包含了标签,是不会把标签给解析出来的.
+    $('#setBtn').click(function () {
+      //2.1 给id为div的标签设置文本
+      $('#div1').text('我是设置的文本<a href="https://www.baidu.com">我是超链接</a>')
+    });
+
+
+  });
+</script>
+
+
+
+</body>
+</html>

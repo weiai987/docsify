@@ -1,0 +1,145 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* 分数显示 */
+.score {
+    width: 500px;
+    margin: 50px auto 0;
+    font-size: 40px;
+    font-weight: 700;
+}
+
+/* 游戏主面板 */
+.main {
+    width: 500px;
+    height: 500px;
+    margin: auto;
+    background-color: #bbada0;
+    border-radius: 10px;
+}
+
+/* 数字方块 */
+.main>div {
+    width: 100px;
+    height: 100px;
+    margin: 20px 0 0 20px;
+    background-color: #cdc1b4;
+    float: left;
+    border-radius: 5px;
+    font-size: 40px;
+    font-weight: 700;
+    text-align: center;
+    line-height: 100px;
+    color: #fff;
+}
+
+/* 游戏结束时显示 */
+#gameover {
+    width: 500px;
+    height: 300px;
+    position: absolute;
+    top: 102px;
+    left: 50%;
+    margin-left: -250px;
+    z-index: 3;
+    background: rgba(200, 200, 200, 0.5);
+    text-align: center;
+    font-size: 48px;
+    font-weight: 700;
+    color: #776e65;
+    border-radius: 10px;
+    padding-top: 200px;
+    display: none;
+}
+
+/* 游戏结束时再试一次按钮 */
+.zhe input {
+    margin-top: -480px;
+    width: 120px;
+    height: 40px;
+    background: #8f7a66;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    font-size: 20px;
+}
+
+/* 数字为2 */
+.main>.n2 {
+    background: #eee4da;
+    color: #776e65;
+}
+
+/* 数字为4 */
+.main>.n4 {
+    background: #ede0c8;
+    color: #776e65;
+}
+
+/* 数字为8 */
+.main>.n8 {
+    background: #f2b179;
+    color: #f9f6f2;
+}
+
+/* 数字为16 */
+.main>.n16 {
+    background: #f59563;
+    color: #f9f0cd;
+}
+
+/* 数字为32 */
+.main>.n32 {
+    background: #f67c5f;
+    color: #f9f6ef;
+}
+
+/* 数字为64 */
+.main>.n64 {
+    background: #f65e3b;
+    color: #f9f6f2;
+}
+
+/* 数字为128 */
+.main>.n128 {
+    background: #edcf72;
+    color: #f6ebd5;
+    font-size: 36px;
+}
+
+/* 数字为256 */
+.main>.n256 {
+    background: #edcc61;
+    color: #f9f6f2;
+    font-size: 36px;
+}
+
+/* 数字为512 */
+.main>.n512 {
+    background: #edc850;
+    color: #f9f6f2;
+    font-size: 36px;
+}
+
+/* 数字为1024 */
+.main>.n1024 {
+    background: #edc53f;
+    color: #f7f6f2;
+    font-size: 30px;
+}
+
+/* 数字为2048 */
+.main>.n2048 {
+    background: #edc22e;
+    color: #f9f6f2;
+    font-size: 30px;
+}
+
+/* 数字为4096 */
+.main>.n4096 {
+    background: #a6c;
+    color: #f9f6f2;
+    font-size: 30px;
+}

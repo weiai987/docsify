@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>原生js实现ajax</title>
+<script type="text/javascript">
+	//点击请求按钮执行
+	function fun() {
+		//1.创建XMLHttpRequest
+		var xmlhttp;
+		if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
+			xmlhttp = new XMLHttpRequest();
+		} else {// code for IE6, IE5
+			xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+		}
+
+		/*2使用对象的open(method,url,async)方法建立连接
+		
+			method：请求的类型；GET 或 POST
+			url：文件在服务器上的位置
+			async：true（异步）或 false（同步
+		 */
+
+		xmlhttp.open("GET", "ajaxServlet?username=wangcai", true);
+
+		//3.发送请求
+		xmlhttp.send();
+		//接收并处理来自服务器的响应结果
+		xmlhttp.onreadystatechange = function() {
+			if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+				
+				//获取服务器的响应数据
+				var data = xmlhttp.responseText;
+				
+				alert(data);
+				
+			}
+		}
+
+	}
+</script>
+</head>
+<body>
+	<input type="button" value="发送Ajax请求" onclick="fun();">
+	<input type="text" name="username">
+</body>
+</html>

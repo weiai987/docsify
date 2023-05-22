@@ -1,0 +1,26 @@
+-- 查看用户
+select host,user,authentication_string from mysql.user;
+
+-- 创建用户
+create user 'test'@'localhost' identified by '123';
+create user 'test'@'192.168.7.22' identified by '123';
+create user 'test'@'%' identified by '123';
+
+-- 修改用户密码
+ALTER USER 'bbb'@'localhost' IDENTIFIED BY '456';
+flush privileges; 
+
+mysqladmin -uroot -p123456 password 123
+
+-- 删除用户
+drop user 'bbb'@'localhost';
+
+-- 给用户授权
+grant all on dbname.* to zhrt@localhost identified by '123456';
+FLUSH PRIVILEGES;
+
+-- 查看用户权限
+show grants for 'bbb'@'localhost'; 
+
+-- 取消用户授权
+REVOKE all ON power.* FROM bbb@localhost;

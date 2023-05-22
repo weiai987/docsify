@@ -1,0 +1,121 @@
+-- 非空约束
+create table tc_1(
+  aaa int not null,
+  bbb varchar(20) not null,
+  ccc datetime not null
+);
+alter table tc_1 modify aaa int;
+alter table tc_1 modify bbb varchar(20) not null;
+
+SELECT * FROM information_schema.TABLE_CONSTRAINTS where table_schema='test';
+
+-- 唯一性约束，列约束定义模式
+create table tc_2(
+  aaa int unique,
+  bbb varchar(20) unique,
+  ccc datetime unique
+);
+--表约束定义模式
+--表级约束可以给约束起名字(方便以后通过这个名字来删除这个约束)
+create table tc_3(
+  aaa int,
+  bbb varchar(20),
+  ccc datetime,
+  unique(aaa),
+  unique(bbb),
+  constraint u_ccc unique(ccc)
+);
+--组合约束模式
+create table tc_4(
+  aaa int,
+  bbb varchar(20),
+  ccc datetime,
+  unique(aaa, bbb),
+  unique(ccc)
+);
+-- 找到对应的唯一约束名称
+SELECT * FROM information_schema.TABLE_CONSTRAINTS where table_schema='test'
+  and table_name='tc_3';
+-- 唯一约束同时也是索引，还可以用索引方式找到
+show index from tc_3;
+-- 用删除索引的方法来删除唯一约束
+drop index u_ccc on tc_3;
+-- 在删除表时会自动删除表上全部的唯一约束
+--以约束模式添加
+ALTER TABLE tc_3 ADD unique(ccc);
+--以索引模式添加
+create unique index u_ccc on tc_3 (ccc);
+
+-- 默认值约束
+create table tc_5(
+  aaa int default 0,
+  bbb varchar(20) default 'aaa',
+  ccc datetime default '2020-1-1'
+);
+insert into tc_5 values();
+
+alter table tc_5 modify aaa int default 5;
+alter table tc_5 modify bbb varchar(20) default 'bbb';
+
+alter table tc_5 modify aaa int default null;
+alter table tc_5 modify bbb varchar(20) default null;
+-- 在删除表时会自动删除表上全部的默认约束
+
+
+create table tc_7(
+  aaa int,
+  bbb varchar(20),
+  ccc datetime
+);
+alter table tc_7 add primary key(aaa);
+alter table tc_7 add primary key(aaa, bbb);
+alter table tc_7 drop primary key;
+-- 在删除表时会自动删除表上的主键约束
+
+-- 检查约束
+create table tc_9(
+  aaa int primary key,
+  bbb varchar(20),
+  ccc datetime,
+  check(aaa > 100 and aaa<1000)
+);
+create table tc_9(
+  aaa int primary key,
+  bbb varchar(20),
+  ccc datetime,
+  constraint c_tc_9 check(aaa > 100 and aaa<1000)
+);
+insert into tc_9 values(123, 'aaa', '1-2-3');
+-- 不满足约束的数据，无法插入记录表
+insert into tc_9 values(23, 'aaa', '1-2-3');
+insert into tc_9 values(1234, 'aaa', '1-2-3');
+
+
+create table tc_9(
+  aaa int primary key,
+  bbb varchar(20),
+  ccc datetime,
+  constraint c_tc_9a check(aaa > 100 and aaa<1000),
+  constraint c_tc_9b check(bbb in ('男', '女')),
+  constraint c_tc_9c check(ccc > '2000-1-1')
+);
+
+insert into tc_9 values(123, '男', '2001-2-3');
+-- 不满足约束的数据，无法插入记录表
+insert into tc_9 values(223, 'aaa', '2001-2-3');
+insert into tc_9 values(223, '女', '1995-2-3');
+
+alter table tc_9 add constraint c_tc_9d check(ccc < '2020-1-1');
+insert into tc_9 values(223, '女', '2025-2-3');
+
+alter table tc_9 drop check c_tc_9d;
+alter table tc_9 add constraint c_tc_9d check(ccc < '2020-1-1');
+
+
+-- 自动增长
+create table if not exists my_auto_increment(
+  id int primary key auto_increment,
+  name varchar(10) not null
+) charset utf8;
+alter table my_auto_increment modify id int;
+set auto_increment_increment = 5;

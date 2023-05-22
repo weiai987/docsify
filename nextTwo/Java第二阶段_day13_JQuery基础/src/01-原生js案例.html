@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title>标题</title>
+  <style>
+    div {
+      height: 100px;
+      margin-top: 10px;
+    }
+  </style>
+
+</head>
+<body>
+<input type="button" value="设置边框" id="btn1"/>
+<input type="button" value="设置文本" id="btn2"/>
+<div></div>
+<div></div>
+<div></div>
+
+<script>
+  //需求:点击按钮,给div设置边框和文本
+  //以前的做法
+  //入口函数
+  window.onload = function () {
+    //获取元素
+    var btn1 = document.getElementById("btn1");
+    var btn2 = document.getElementById("btn2");
+    var divs = document.getElementsByTagName("div");
+    //设置边框
+    btn1.onclick = function () {
+      for(var i = 0 ; i < divs.length; i++){
+        divs[i].style.border = "1px solid red";
+      }
+    }
+    //设置文本
+    btn2.onclick = function () {
+      for(var i = 0 ; i < divs.length; i++){
+        divs[i].textContent = "设置的文本";
+      }
+    }
+  }
+
+  // 再写一个入口函数window.onload
+  // window.onload = function () {
+  //   console.log("我又是一个入口函数");
+  // }
+
+
+  //原生js有哪些缺点:
+  //1.不能写多个入口函数,如果写了多个,后面的会覆盖前面的.
+  //2.原生js的api名字都太长,太难记
+  //3.原生js有代码冗余.
+  //4.原生js中有些方法或者属性,有些浏览器不支持.
+  //5.容错率较低,前面的代码出现了问题,后面的代码也不会执行.
+
+
+
+
+</script>
+
+</body>
+</html>
+

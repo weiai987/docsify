@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://cdn.bootcss.com/jquery/1.11.3/jquery.js"></script>
+</head>
+<body>
+	<div class="demo"></div>
+
+	<script>
+		// css() -- 赋值
+		// 1.修改一个属性，传递两个参数
+		$(".demo").css("width",100)  //可以不用带单位
+		// 2.修改多个属性，传递一个对象
+		$(".demo")
+			.css({"height" : "100px","background" : "red"})
+			.css({width : "+=100px"}) //可以做加法运算
+		// css() -- 取值
+		console.log( $(".demo").css("width") )
+		console.log( $(".demo").css("background") )//出来的是计算属性
+
+	</script>
+</body>
+</html>

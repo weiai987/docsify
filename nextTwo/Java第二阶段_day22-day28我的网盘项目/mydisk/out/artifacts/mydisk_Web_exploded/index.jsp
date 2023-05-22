@@ -1,0 +1,299 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+         pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+    <style type="text/css">
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        .left {
+            color: white;
+            width: 250px;
+            background-color: #1C223E;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+        }
+
+        .right {
+            position: absolute;
+            left: 250px;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            padding: 50px;
+            color: #656565;
+        }
+
+        .list_item {
+            display: flex;
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        .list_item_menu {
+            margin: auto;
+            margin-left: 20px;
+        }
+
+        .bt_bar, .breadcrumb {
+            margin-top: 20px;
+        }
+
+        .bt_bar > input {
+            min-width: 100px;
+            padding: 13px;
+            background-color: #69B6FF;
+            outline: none;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+
+        .file_list_item {
+            display: inline-block;
+            margin-right: 40px;
+            width: 105px;
+            margin-top: 30px;
+        }
+
+        .file_list_item:hover {
+            cursor: pointer;
+        }
+
+        .search_bar > input {
+            text-indent: 20px;
+            background-image: url(./static/img/search.png);
+            background-repeat: no-repeat;
+            background-size: 30px;
+            background-position: 99% 5px;
+        }
+
+        .list_item_menu:hover {
+            cursor: pointer;
+        }
+
+        .click {
+            background-color: #8483c5;
+        }
+
+		a{
+			text-decoration: none;
+		}
+
+        .list_item a{
+            color: white;
+        }
+
+    </style>
+</head>
+<body>
+<div style="display: flex; height: 100%; width: 100%;">
+    <div class="left">
+        <div style="height: 200px; width: 100%; display: flex;">
+            <div style="padding: 20px;">
+                <img alt="" src="./static/img/${user.headImg}" style="width: 100px;border-radius: 50px;">
+            </div>
+            <div style="padding-top: 30px;">
+                <div style="color: white;">${user.username }</div>
+                <a href="/logout">
+                    <div style="color: #6880EE;">退出</div>
+                </a>
+            </div>
+        </div>
+        <div style="height: calc(100% - 200px); width: 100%;">
+            <div class="list_item">
+                <div class="list_item_img">
+                    <img alt="" src="./static/img/folder-close.png"
+                         style="width: 50px;">
+                </div>
+                <div class="list_item_menu"><a href="index">全部文件</a></div>
+            </div>
+
+            <div class="list_item">
+                <div class="list_item_img">
+                    <img alt="" src="./static/img/picture.png" style="width: 50px;">
+                </div>
+                <div class="list_item_menu">图片</div>
+            </div>
+
+            <div class="list_item">
+                <div class="list_item_img">
+                    <img alt="" src="./static/img/file.png" style="width: 50px;">
+                </div>
+                <div class="list_item_menu">文档</div>
+            </div>
+
+            <div class="list_item">
+                <div class="list_item_img">
+                    <img alt="" src="./static/img/video.png" style="width: 50px;">
+                </div>
+                <div class="list_item_menu">视频</div>
+            </div>
+
+            <div class="list_item">
+                <div class="list_item_img">
+                    <img alt="" src="./static/img/music.png" style="width: 50px;">
+                </div>
+                <div class="list_item_menu">音乐</div>
+            </div>
+
+            <div class="list_item">
+                <div class="list_item_img">
+                    <img alt="" src="./static/img/other.png" style="width: 50px;">
+                </div>
+                <div class="list_item_menu">其它</div>
+            </div>
+        </div>
+    </div>
+    <div class="right">
+        <div class="search_bar">
+            <input style="height: 40px; width: 100%; border-radius: 25px; outline: none; border: solid 1px;">
+        </div>
+        <div class="bt_bar">
+            <input type="button" value="上传" id="upload">
+            <input type="button" value="下载" id="download">
+            <input type="button" value="新建文件夹" id="folder">
+            <input type="button" value="删除" id="del">
+            <input type="button" value="分享" id="share">
+        </div>
+		<c:set var="paths" value="${fn:split(pathName, '/')}"></c:set>
+		<div class="breadcrumb"><a href="/index">全部文件 </a>
+			<c:forEach items="${paths}" var="path" varStatus="i">
+				>
+				<c:set var="pp" value=""></c:set>
+				<c:forEach items="${paths}" var="p" end="${i.index}" varStatus="ii">
+					<c:set var="pp" value="${pp.concat('/').concat(p)}"></c:set>
+					<c:if test="${ii.last}">
+						<a href="/index?pathName=${pp}">${path}</a>
+					</c:if>
+				</c:forEach>
+			</c:forEach>
+		</div>
+        <div class="file_list">
+            <c:forEach items="${list}" var="userFile">
+                <div class="file_list_item">
+                    <div>
+                        <c:if test="${userFile.isDir==1 }">
+                            <img title="${userFile.submitFileName}" src="./static/img/file_1.png" class="file"
+                                 data="${userFile.id }"
+                                 style="width: 100px;">
+                        </c:if>
+                        <c:if test="${userFile.isDir==0 }">
+                            <img title="${userFile.submitFileName}" src="./static/img/folder-close_1.png" class="folder"
+                                 data="${userFile.fileName}"
+                                 style="width: 100px;">
+                        </c:if>
+                    </div>
+                    <div style="text-align: center;">${userFile.submitFileName }</div>
+                </div>
+            </c:forEach>
+        </div>
+    </div>
+</div>
+<form style="display: none;">
+    <input name="pathName" value="${pathName}">
+    <input type="file" name="files" multiple="multiple">
+</form>
+<script type="text/javascript" src="./static/js/jquery.min.js"></script>
+<script type="text/javascript">
+    $(function () {
+        //上传按钮
+        $('#upload').click(function () {
+            $('form>input[type="file"]').click();
+        })
+
+        //真正上传方法
+        $('form>input[type="file"]').change(function () {
+            $.ajax({
+                url: '/upload',
+                type: 'post',
+                data: new FormData($('form')[0]),
+                contentType: false,
+                processData: false,
+                dataType: 'json',
+                success: function (e) {
+                    if (e.rs) {
+                        window.location.reload()
+                    } else {
+                        alert(e.msg);
+                    }
+                }
+            })
+        })
+
+        //下载
+        $('#download').click(function () {
+            var id = $('.file.click').attr("data");
+            if (id != undefined) {
+                window.location.href = "/download?id=" + id;
+            }
+        })
+
+        //新建目录
+        $('#folder').click(function () {
+            var pathName = $('input[name="pathName"]').val();
+
+            var text = prompt("请输入目录名称");
+            if (text) {
+                $.post('/createDir', {
+                    pathName: pathName,
+                    name: text
+                }, function (e) {
+                    if (e.rs) {
+                        window.location.reload()
+                    } else {
+                        alert(e.msg);
+                    }
+                }, 'json')
+            }
+        })
+
+        //文件点击选中
+        $('.file').click(function () {
+            $('.file').not(this).removeClass("click");
+            $(this).toggleClass("click")
+        })
+
+        //进入目录
+        $('.folder').dblclick(function () {
+            var path = $(this).attr("data");
+            window.location.href = "index?pathName=" + path;
+        })
+
+        //删除
+        $('#del').click(function () {
+            var id = $('.file.click').attr("data");
+            if (id != undefined) {
+                $.post('/del', {
+                    id: id
+                }, function (e) {
+                    console.log(e);
+                    if (e.rs) {
+                        window.location.reload()
+                    } else {
+                        alert(e.msg);
+                    }
+                }, "json")
+            }
+        })
+
+        //分享
+        $('#share').click(function () {
+
+
+        })
+    })
+</script>
+</body>
+</html>

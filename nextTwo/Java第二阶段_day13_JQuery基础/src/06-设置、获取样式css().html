@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title>标题</title>
+
+  <style>
+    #div1 {
+      height: 200px;
+      background-color: pink;
+      border: 2px solid red;
+    }
+  </style>
+
+</head>
+<body>
+
+  <input type="button" value="获取" id="getBtn"/>
+  <input type="button" value="设置" id="setBtn"/>
+
+  <div id="div1" style="width:200px"></div>
+  <div id="div2" style="width:300px"></div>
+  <div id="div3" style="width:400px"></div>
+
+<script src="jquery-1.12.4.js"></script>
+<script>
+  $(function () {
+    //css(); 获取/设置样式的.
+
+    //1.获取样式
+    //css(样式名);
+    $('#getBtn').click(function () {
+      //1.1 获取id为div1的标签的样式.
+      // console.log($('#div1').css('width')); //'200px'
+      // console.log($('#div1').css('height'));//'200px'
+      // console.log($('#div1').css('background-color'));//'rgb(255, 192, 203)'
+      // console.log($('#div1').css('backgroundColor'));//'rgb(255, 192, 203)'
+      // console.log($('#div1').css('border'));//'2px solid rgb(255, 0, 0)'
+
+      //在ie浏览器中,获取样式,要写准确的样式,比如边框要写是那个边框那个样式.
+      //console.log($('#div1').css('border-top-width'));//'2px'
+
+      //1.2 获取标签为div的元素的样式.
+      //如果获取样式的jQuery对象里面包含多个dom对象,那只会返回第一个dom对象的样式.
+      console.log($('div').css('width'));//'200px'
+    });
+
+
+    //2.设置样式.
+    //css()方法设置的样式在元素的行内.
+    //css(样式名,样式值);
+    //css({ 这个对象就可以传多个样式名样式值 });
+    $('#setBtn').click(function () {
+      //2.1 设置id为div1的样式.
+      //设置单样式
+      $('#div1').css('width',300);
+      $('#div1').css('height','300px');
+      $('#div1').css('backgroundColor','green');
+      $('#div1').css('border-top-width',10);
+
+      //2.2  设置id为div1的样式.
+      //设置多样式
+      // $('#div1').css({
+      //   width:300,
+      //   'height':'300px',
+      //   backgroundColor:'green',
+      //   'border-top-width':10
+      // });
+
+
+      //2.3 设置标签为div的元素
+      $('div').css({
+        width:300,
+        'height':'300px',
+        backgroundColor:'green',
+        margin:10
+      });
+
+    });
+
+
+  });
+</script>
+
+</body>
+</html>
+
+

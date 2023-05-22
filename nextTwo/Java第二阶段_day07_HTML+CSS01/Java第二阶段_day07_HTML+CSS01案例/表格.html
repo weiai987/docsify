@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        1、表格的作用
+                按照一定顺序摆放数据
+           表格是由一些   单元格 组成
+     -->
+     <!-- table  意思就是一个表格
+                属性：
+                        边框  border
+                        单元格和单元格之间的距离  cellspacing 
+                        cellpadding  单元格边框和内容之间的距离
+                        aligin      表格水平的位置
+           tr  行  
+                align    调整一整行内容的水平位置
+                valign    调整内容的垂直位置（top   middle   bottom）
+                *注意*    tr中width是不生效的
+                height    调整本行的高度
+                bgcolor   调整本行的颜色
+          td   单元格
+                属性  ：
+                    width、  height
+                    （只要有任何一个单元格发生改变的时候，他所在的那一行或者那一列宽度和高度都会发生变化）
+                    align  调整的自身内容的水平位置
+                    valign  调整自身内容的垂直位置
+                    bgcolor  调整的是自身的颜色
+
+    -->
+     <table border="1" width="500" height="500" cellspacing="0" cellpadding="0" align="center" bgcolor="yellow">
+        <tr align="center" valign="bottom" bgcolor="red">
+            <td align="center" bgcolor="blue">IU</td>
+            <td width="300px">刘德华</td>
+            <td>周星驰</td>
+        </tr>
+        <tr align="center">
+            <td>李云龙</td>
+            <td valign="bottom">迪丽热巴</td>
+            <td>古力娜扎</td>
+        </tr>
+        <tr>
+            <td>马尔扎哈</td>
+            <td>卡萨丁</td>
+            <td>卡萨</td>
+        </tr>
+     </table>
+</body>
+</html>

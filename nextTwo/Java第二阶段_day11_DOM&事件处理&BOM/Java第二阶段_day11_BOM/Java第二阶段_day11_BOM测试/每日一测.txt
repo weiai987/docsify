@@ -1,0 +1,32 @@
+1、在Javascript 中，对于浏览器对象的层次关系理解正确的是(AD)（选择二项)
+A.window对象是所有页面内容的根对象
+B.document对象包含1ocation对象和history 对象
+C.location对象包含history
+D.document对象包含form对象
+
+2、下列选项中关于浏览器对象的说法错误的是(C)
+A.history 对象记录了用户在一个浏览器中已经访间过的URLs
+B.location对象相当于正浏览器中的地址栏，包含关于当前URL地址的信息
+C.location 对象是history对象的父对象
+D.location对象是window对象的子对象
+
+3、如果在HTML页面中包含如下图片标签，则选项中的(）语句能够实现隐藏该图片的功能。(D)
+<img id=picsrc="Sunset.jpg width="4003height=3002>
+
+A.document.getElementById(pic).style.display=visible";
+B.document.getElementById(pic').style.display=disvisible;
+C.document.getElementById(pic).style.display=block;
+D.document.getElementById(pic).style.display=none;
+
+
+
+
+
+
+
+
+
+
+
+
+

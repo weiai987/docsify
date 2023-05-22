@@ -1,0 +1,121 @@
+CREATE TABLE student3 (
+  id int,
+  name varchar(20),
+  age int,
+  sex varchar(5),
+  address varchar(100),
+  math int,
+  english int
+);
+
+INSERT INTO student3(id,NAME,age,sex,address,math,english) VALUES (1,'马云',55,'男','杭州',66,78),(2,'马化腾',45,'女','深圳',98,87),(3,'马景涛',55,'男','香港',56,77),(4,'柳岩',20,'女','湖南',76,65),(5,'柳青',20,'男','湖南',86,NULL),(6,'刘德华',57,'男','香港',99,99),(7,'马德',22,'女','香港',99,99),(8,'德玛西亚',18,'男','南京',56,65);
+
+-- 简单查询
+SELECT * FROM student3;
+SELECT id, NAME ,age, sex, address, math, english FROM student3;
+SELECT id, NAME ,age, sex, address FROM student3;
+
+-- where查询
+select * from test1 where aaa = '呵呵';
+select* from test1 where not aaa = '呵呵';
+select* from test1 where aaa != '呵呵';
+
+-- distinct去重复
+select bbb from test1 group by bbb;
+-- 这其实跟distinct返回的结果一致
+select distinct bbb from test1;
+
+-- 聚合函数
+select avg(bbb) from test1;
+select aaa, avg(bbb) from test1 group by aaa;
+select aaa, max(bbb) from test1 group by aaa;
+select aaa, min(bbb) from test1 group by aaa;
+
+drop table emp;
+create table emp(
+	emp_id int primary key auto_increment,
+	emp_name varchar(20) comment '员工姓名',
+	emp_dept varchar(20) comment '部门名称',
+	salary decimal(10, 2) comment '工资',
+	hiredate datetime comment '入职时间'
+);
+
+insert into emp(emp_name, emp_dept, salary, hiredate) values('赵大', '开发部', 4500, '2016-3-1');
+insert into emp(emp_name, emp_dept, salary, hiredate) values('陈二', '开发部', 5000, '2015-5-6');
+insert into emp(emp_name, emp_dept, salary, hiredate) values('张三', '开发部', 7000, '2012-7-4');
+insert into emp(emp_name, emp_dept, salary, hiredate) values('李四', '测试部', 5500, '2015-3-5');
+insert into emp(emp_name, emp_dept, salary, hiredate) values('王五', '测试部', 3500, '20180407');
+insert into emp(emp_name, emp_dept, salary, hiredate) values('钱六', '销售部', 6000, '20170909');
+insert into emp(emp_name, emp_dept, salary, hiredate) values('周七', '财务部', 5200, '20170709');
+select * from emp;
+
+select emp_dept, max(salary) from emp group by emp_dept;
+select emp_dept, min(salary) from emp group by emp_dept;
+
+select emp_dept, max(salary) from emp where hiredate between '20150101' and '2016-12-31' group by emp_dept;
+
+select count(*) from emp;
+select count(1) from emp;
+select count(emp_id) from emp;
+select emp_dept, count(emp_id) from emp group by emp_dept;
+
+select emp_dept, sum(salary) from emp group by emp_dept;
+select emp_dept, sum(salary) from emp  where emp_dept='aaa' group by emp_dept;
+
+-- order by 子句
+select * from emp order by salary;
+--默认情况按升序排列
+select * from emp order by salary desc;
+--指定desc后按降序排列
+select emp_dept, sum(salary) from emp group by emp_dept order by emp_dept;
+--字符串也可以排序，排序依据为字符编码的二进制值
+select emp_dept, sum(salary) from emp group by emp_dept order by emp_dept desc;
+select emp_dept, sum(salary) from emp group by emp_dept order by 1 desc;
+
+-- union 与 union all
+create table teacher(
+	id int primary key auto_increment,
+	teacher_name varchar(20),
+	teacher_city varchar(20)
+);
+create table student(
+	id int primary key auto_increment,
+	student_name varchar(20),
+	student_city varchar(20)
+);
+insert into teacher(teacher_name, teacher_city) values('赵大', '武汉');
+insert into teacher(teacher_name, teacher_city) values('陈二', '鄂州');
+insert into teacher(teacher_name, teacher_city) values('张三', '襄阳');
+
+insert into student(student_name, student_city) values('李四', '宜昌');
+insert into student(student_name, student_city) values('王五', '恩施');
+insert into student(student_name, student_city) values('钱六', '黄石');
+insert into student(student_name, student_city) values('周七', '孝感');
+
+select * from teacher
+union
+select * from student;
+select teacher_city from teacher
+union
+select student_city from student;
+
+select * from teacher
+union
+select * from student;
+select teacher_city from teacher
+union
+select student_city from student;
+select teacher_city from teacher
+union all
+select student_city from student;
+
+select emp_dept, sum(salary) from emp group by emp_dept
+union
+select emp_dept, sum(salary) from emp group by emp_dept
+order by emp_dept desc;
+--或者这样
+(select emp_dept, sum(salary) from emp group by emp_dept)
+union all
+(select emp_dept, sum(salary) from emp group by emp_dept)
+order by emp_dept desc;
+

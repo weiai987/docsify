@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			#ball{
+				position: absolute;
+			}
+		</style>
+	</head>
+	
+	<body>
+		
+		<img src="img/ball.png" id="ball" width="120" height="120"/>
+		
+		<script>
+			var ball = document.getElementById("ball");
+			// 获取足球的最大X位置
+			var maxX = window.innerWidth - ball.offsetWidth ;
+			// 设置定时器
+			setInterval(moveX, 10);
+			
+			// X轴上的每次偏移量
+			var xv = 5;
+			// 当前X轴的边距
+			var xs = 0;
+			function moveX(){
+				// 每次移动先计算新的左边界
+				xs = xs + xv;
+				// 当右边超出边界则将偏移量取反,效果则为反弹
+				if(xs >= maxX){
+					xs = maxX;
+					xv = -xv;
+				}else if(xs < 0){// 当左边超出边界则将偏移量取反
+					xs = 0;
+					xv = -xv;
+				}
+				// 将新的位置更新到图片的样式上
+				ball.style.left = xs + "px";
+			}
+			
+			 
+			
+			
+			
+			
+		</script>
+		
+	</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .father{
+            width: 300px;
+            height: 300px;
+            border: 1px solid red;
+            /* padding: 50px; */
+            margin: 0 auto;
+        }
+        .son1,.son2,.son3{
+            width: 100px;
+            height: 100px;
+        }
+        .son1{
+            background-color: red;
+            /* relative 相对定位 */
+            position: relative;
+            /* left: 100px; */
+            right: 10px;
+            /* top: 0px; */
+            /* bottom: 0px; */
+        }
+        .son2{
+            background-color: green;
+            position: relative;
+            left: 0px;
+        }
+        .son3{
+            background-color: black;
+            position: relative;
+            left: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="father">
+        <div class="son1"></div>
+        <div class="son2"></div>
+        <div class="son3"></div>
+    </div>
+</body>
+</html>

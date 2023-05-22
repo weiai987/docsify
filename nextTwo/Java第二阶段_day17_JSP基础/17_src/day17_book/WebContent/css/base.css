@@ -1,0 +1,26 @@
+		body {
+			background: url(../img/bg.png) no-repeat;
+			background-size: cover;
+		}
+		
+		.container {
+			width: 350px;
+			height: 400px;
+			position: absolute;
+			background: #fff;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			padding-left: 30px;
+			padding-right: 30px;
+			border: 6px solid rgba(0, 0, 0, 0.3);
+			background-clip: padding-box;
+		}
+		
+		h2 {
+			text-align: center;
+		}
+		
+		form {
+			margin-bottom: 10px;
+		}

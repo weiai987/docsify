@@ -1,0 +1,42 @@
+﻿1、HTML语言中的换行标记是 (   )
+A、html
+B、br
+C、title
+D、p
+答案：B
+
+2、<img>标记符中连接图片位置的参数是 (  )
+A、href
+B、src
+C、type
+D、align
+答案：B
+
+3.标记符title是放在以下哪个标记符之间的？（  ）
+A、<html></html>
+B、<head></head>
+C、<body></body>
+D、<h1></h1>
+答案：B
+
+4、产生粗体字的 HTML 标签是？
+A、<i></i>
+B、<s></s>
+C、<b></b>
+D、<u></u>
+答案：C
+
+5、产生斜体字的 HTML 标签是？
+A、<i></i>
+B、<b></b>
+C、<s></s>
+D、<u></u>
+答案：A
+
+6、在下列的 HTML 中，哪个可以产生文本框？（ ）
+A、<input type="textfield">
+B、<textinput text="text">
+C、<input type="text">
+D、<textfield>
+答案：C
+

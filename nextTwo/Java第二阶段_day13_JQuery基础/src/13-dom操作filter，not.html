@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+		<script src="https://cdn.bootcss.com/jquery/1.11.3/jquery.js"></script>
+	</head>
+	<body>
+		<div class="wrapper">
+			<ul>
+				<li>1</li>
+				<li class="demo">2</li>
+				<li>3</li>
+				<li>4</li>
+				<li class="demo">5</li>
+			</ul>
+		</div>
+		<ul>
+			<li>1</li>
+			<li class="demo">2</li>
+			<li>3</li>
+			<li>4</li>
+			<li class="demo">5</li>
+		</ul>
+		<script>
+			// 把demo获取到进行操作
+			// console.log( $(".wrapper ul").find(".demo") )
+ 
+
+
+			// filter() 过滤   
+ 			// 两种参数：选择器，function
+
+ 			//第一种为选择器
+			// $(".wrapper")
+			// 	.find("ul")
+			// 	.find("li")
+			// 	.filter(".demo")
+			// 	.css({color : "red"})
+
+			//传入jquery选择器筛选
+			// $(".wrapper ul")
+			// 	.filter("li:odd")   //注意：只能在选择好的基础之上进行筛选
+			// 	.css({color : "red"})
+
+			// $(".wrapper ul")
+			// 	.find("li")
+			// 	.filter(":odd")  
+			// 	.css({color : "red"})
+
+			// 第二种为函数
+			$(".wrapper ul li").filter(function(index,ele){
+				console.log(ele)
+				console.log(index)
+				// return false  //返回boolean表示是否选中
+				return index % 2 == 0;
+			}).css({color : "red"})
+
+
+
+			// not() 
+			// 跟filter完全相反
+
+		</script>
+	</body>
+</html>
