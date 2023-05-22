@@ -28,7 +28,7 @@
 * [day03_MySQL进阶](./nextTwo/Java第二阶段_day03_MySQL高级/Java第二阶段_day03_MySQL进阶知识点/Java第二阶段_day03_MySQL进阶.md)
 * [day04_JDBC基础](./nextTwo/Java第二阶段_day04_JDBC基础/Java第二阶段_day04_JDBC基础知识点/Java第二阶段_day04_JDBC基础.md)
 * [day05_JDBC高级](./nextTwo/Java第二阶段_day05_JDBC高级/Java第二阶段_day05_JDBC高级知识点/Java第二阶段_day05_JDBC高级.md)
-* [day06_图书借阅系统概要设计说明书](./nextTwo/Java第二阶段_day06_JDBC综合项目/Java第二阶段_day06_JDBC图书借阅系统/Java第二阶段_day06_图书借阅系统概要设计说明书.docx)
+* [day06_图书借阅系统概要设计说明书](./nextTwo/Java第二阶段_day06_JDBC综合项目/Java第二阶段_day06_JDBC图书借阅系统/测试小题.jpg)
 * [day07_HTML+CSS01](./nextTwo/Java第二阶段_day07_HTML+CSS01/Java第二阶段_day07_HTML+CSS01教案/Java第二阶段_day07_HTML+CSS01.md)
 * [day08_HTML+CSS02](./nextTwo/Java第二阶段_day08_HTML+CSS02/Java第二阶段_day08_HTML+CSS02教案/Java第二阶段_day08_HTML+CSS02.md)
 * [day09_HTML+CSS03](./nextTwo/Java第二阶段_day08_HTML+CSS02/Java第二阶段_day08_HTML+CSS02教案/Java第二阶段_day08_HTML+CSS02.md)
