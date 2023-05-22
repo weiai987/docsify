@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"  ?>
+<a:students
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"		
+		xmlns:a="http://www.blb.com/xml"
+		xsi:schemaLocation="http://www.blb.com/xml student.xsd"
+
+>
+	<a:student number="blb_0001">
+		<a:name>six</a:name>
+		<a:age>300</a:age>
+		<a:sex>boy</a:sex>
+	</a:student>
+ 
+</a:students>

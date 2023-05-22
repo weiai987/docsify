@@ -1,0 +1,50 @@
+<?xml version="1.0" ?>
+<xsd:schema xmlns="http://www.blb.com/xml" 
+xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.blb.com/xml" elementFormDefault="qualified">
+<!--  定义标签students  类型是自定义类型studentsType -->
+	<xsd:element name="students" type="studentsType" />
+	<xsd:complexType name="studentsType">
+		<xsd:sequence>
+		<!-- 标签student，类型是自定义类型studentType  最少出现次数是1，最多次数不限 -->
+			<xsd:element name="student" type="studentType" minOccurs="1"
+				maxOccurs="unbounded" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+<!-- 定义自定义类型studentType -->
+	<xsd:complexType name="studentType">
+		<xsd:sequence>
+		<!-- name标签是字符串类型  -->
+			<xsd:element name="name" type="xsd:string" />
+				<!-- age标签是自定义类型ageType  -->
+			<xsd:element name="age" type="ageType" />
+				<!-- sex标签是自定义类型sexType  -->
+			<xsd:element name="sex" type="sexType" />
+		</xsd:sequence>
+		<!-- 属性number，类型是自定义类型numberType，且为必须的 -->
+		<xsd:attribute name="number" type="numberType" use="required" />
+	</xsd:complexType>
+
+	<!-- sexType自定义类型 -->
+	<xsd:simpleType name="sexType">
+		<xsd:restriction base="xsd:string">
+		<!-- 枚举：值只能是boy或者girl   -->
+			<xsd:enumeration value="boy" />
+			<xsd:enumeration value="girl" />
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- 自定义类型ageType  范围从0-300之间 -->
+	<xsd:simpleType name="ageType">
+		<xsd:restriction base="xsd:integer">
+			<xsd:minInclusive value="0" />
+			<xsd:maxInclusive value="300" />
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- 自定义numberType类型，必须以blb_开头，后面跟4位数字 -->
+	<xsd:simpleType name="numberType">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="blb_\d{4}" />
+		</xsd:restriction>
+	</xsd:simpleType>
+</xsd:schema>  

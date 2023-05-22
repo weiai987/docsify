@@ -1,0 +1,12 @@
+<!-- 定义可以有标签students，可以有student子标签，*表示数量为0-N，  +表示1-N -->
+<!ELEMENT students (student+) >
+<!-- 定义有标签student，可以有name，age，sex子标签，需要满足顺序 -->
+<!ELEMENT student (name,age,sex) >
+<!-- 定义可以有标签name，类型为字符串-->
+<!ELEMENT name (#PCDATA) >
+<!-- 定义可以有标签age，类型为字符串-->
+<!ELEMENT age (#PCDATA) >
+<!-- 定义可以有标签sex，类型为字符串-->
+<!ELEMENT sex (#PCDATA) >
+<!-- 定义student标签可以有属性number，必填项-->
+<!ATTLIST student number ID #REQUIRED >

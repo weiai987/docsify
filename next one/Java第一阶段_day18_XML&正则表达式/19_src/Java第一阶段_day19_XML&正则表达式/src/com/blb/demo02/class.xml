@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"    ?>
+<!-- <!DOCTYPE students SYSTEM "student.dtd">  --> <!-- 外部引入dtd    -->
+
+<!-- 内部dtd -->
+<!DOCTYPE students [
+<!ELEMENT students (student+) >
+<!ELEMENT student (name,age,sex) >
+<!ELEMENT name (#PCDATA) >
+<!ELEMENT age (#PCDATA) >
+<!ELEMENT sex (#PCDATA) >
+<!ATTLIST student number ID #REQUIRED >
+]>
+
+<students>
+	<student number="1">
+		<name>six</name>
+		<age>16</age>
+		<sex>girl</sex>
+	</student>
+	
+	<student number="2">
+		<name>seven</name>
+		<age>23</age>
+		<sex>boy</sex>
+	</student>
+ 
+</students>
