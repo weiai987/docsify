@@ -1,4 +1,4 @@
 # docsify
 * [HOME](./)
 
-* [next one](./next one/)
+* [next one](./nextOne/)
