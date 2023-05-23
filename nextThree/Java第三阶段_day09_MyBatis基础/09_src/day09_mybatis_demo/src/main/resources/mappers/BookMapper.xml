@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--命名空间指定接口类型-->
+<mapper namespace="com.blb.mybatis_demo.dao.BookMapper">
+    <!--启动二级缓存-->
+    <cache/>
+    <!--实现Book到tb_book映射-->
+    <resultMap id="bookMap" type="Book">
+        <!--配置主键 property是java属性名 column是表字段名-->
+        <id property="id" column="id"></id>
+        <!--普通字段-->
+        <result property="bookName" column="book_name"></result>
+        <result property="price" column="price"></result>
+        <result property="typeId" column="type_id"></result>
+        <result property="author" column="author"></result>
+        <result property="publishOrg" column="publish_org"></result>
+        <result property="publishTime" column="publish_time"></result>
+        <result property="state" column="state"></result>
+        <result property="bookImage" column="book_image"></result>
+    </resultMap>
+
+    <!--insert配置插入操作 id是接口中方法的名称 parameterType是参数类型-->
+    <insert id="insert" parameterType="Book">
+        insert into tb_book(book_name, price, type_id, author, publish_org, publish_time, state,book_image)
+        values(#{bookName},#{price},#{typeId},#{author},#{publishOrg},#{publishTime},#{state},#{bookImage});
+    </insert>
+
+    <!--select配置查询方法，resultType配置返回类型-->
+    <select id="findAll" resultType="Book">
+        select * from tb_book
+    </select>
+
+    <select id="findById" resultType="Book">
+        select * from tb_book where id = #{id}
+    </select>
+</mapper>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="cpu1" class="com.blb.ioc_demo.IntelCpu"></bean>
+    <bean id="cpu" class="com.blb.ioc_demo.AMDCpu"></bean>
+    <bean id="memory" class="com.blb.ioc_demo.KingstonMemory"></bean>
+    <!--Java对象配置-->
+    <bean id="computer" class="com.blb.ioc_demo.Computer" scope="prototype" >
+        <property name="brand" value="联想"></property>
+        <property name="cpu" ref="cpu"></property>
+        <property name="memory" ref="memory"></property>
+        <!--
+        <constructor-arg name="brand" value="苹果"></constructor-arg>
+        <constructor-arg name="cpu" ref="cpu"></constructor-arg>
+        <constructor-arg name="memory" ref="memory"></constructor-arg>
+        -->
+    </bean>
+</beans>

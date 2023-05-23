@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="day8_bookms_demo:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>day8_bookms_demo</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="day8_bookms_demo.war">
+      <element id="artifact" artifact-name="day8_bookms_demo:war exploded" />
+    </root>
+  </artifact>
+</component>

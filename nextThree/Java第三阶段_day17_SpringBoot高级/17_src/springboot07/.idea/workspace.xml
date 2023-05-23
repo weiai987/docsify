@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="a62133c8-1cbd-4db0-b0d8-664bd43b3732" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ProjectId" id="1meB19UI6GuwECfmuA0fN04czKy" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/static/login/img" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\zhanglm\研发结果\微服务实训\Spring Boot-new\day03\06_src\springboot07\src\main\resources\static\login\img" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Springboot07Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="springboot07" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.demo.Springboot07Application" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a62133c8-1cbd-4db0-b0d8-664bd43b3732" name="Default Changelist" comment="" />
+      <created>1609843958638</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1609843958638</updated>
+      <workItem from="1609843959831" duration="903000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="374" y="97" width="1171" height="886" key="find.popup" timestamp="1609844988121">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="374" y="97" width="1171" height="886" key="find.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1609844988121" />
+  </component>
+</project>

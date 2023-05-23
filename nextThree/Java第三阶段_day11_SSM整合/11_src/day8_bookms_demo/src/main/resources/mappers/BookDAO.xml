@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.blb.bookms.dao.IBookDAO">
+
+    <resultMap id="bookMap" type="Book">
+        <id property="id" column="b_id"></id>
+        <result property="bookName" column="book_name"></result>
+        <result property="price" column="price"></result>
+        <result property="typeId" column="type_id"></result>
+        <result property="author" column="author"></result>
+        <result property="publishOrg" column="publish_org"></result>
+        <result property="publishTime" column="publish_time"></result>
+        <result property="state" column="state"></result>
+        <result property="bookImage" column="book_image"></result>
+        <!--映射一对一 类型-->
+        <association property="bookType" javaType="BookType"
+                     select="com.blb.bookms.dao.IBookTypeDAO.selectBookTypeById" column="type_id">
+        </association>
+    </resultMap>
+
+    <select id="selectBookById" parameterType="java.lang.Integer" resultMap="bookMap">
+        select * from tb_book where id = #{id}
+    </select>
+
+    <select id="selectAllBooks" resultType="Book">
+        select * from tb_book
+    </select>
+
+    <select id="selectCount" resultType="java.lang.Integer">
+        select count(*) from tb_book
+    </select>
+
+    <select id="selectBooksLimit" resultType="Book">
+        select * from tb_book limit #{start},#{length}
+    </select>
+
+    <select id="selectCountType" parameterType="java.lang.Integer" resultType="java.lang.Integer">
+        select count(*) from tb_book where type_id = #{typeId}
+    </select>
+
+    <select id="selectBooksLimitType" resultType="Book">
+        select * from tb_book where type_id=#{typeId} limit #{start},#{length}
+    </select>
+
+    <insert id="saveBook" parameterType="Book">
+        insert into tb_book(book_name,price,type_id,author,publish_org,publish_time,state,book_image)
+        values(#{bookName},#{price},#{typeId},#{author},#{publishOrg},#{publishTime},#{state},#{bookImage})
+    </insert>
+
+
+
+<!--    <update id="updateBook" parameterType="Book">-->
+<!--        update tb_book set book_name=#{bookName},price=#{price},type_id=#{typeId},author=#{author},publish_org=#{publishOrg},publish_time=#{publishTime},state=#{state},book_image=#{bookImage} where id=#{id}-->
+<!--    </update>-->
+
+<!--    /**
+    * 按book的属性多条件查询
+    * @param book
+    * @return
+    */
+    List<Book> findBooksByBook(Book book);-->
+    <select id="selectBooksByBook" parameterType="Book" resultType="Book">
+        select * from tb_book
+        <where>
+            <if test="bookName != null and bookName != ''">
+                book_name = #{bookName}
+            </if>
+            <if test="author != null and author != ''">
+                and author = #{author}
+            </if>
+            <if test="price != null and price != ''">
+                and price = #{price}
+            </if>
+        </where>
+    </select>
+
+    <update id="updateBook" parameterType="Book">
+        update tb_book
+        <trim prefix="set" suffixOverrides=",">
+            <if test="bookName != null and bookName != ''">
+                book_name=#{bookName},
+            </if>
+            <if test="price != null and price != 0">
+                price=#{price},
+            </if>
+            <if test="typeId != null and typeId != 0">
+                type_id=#{typeId},
+            </if>
+            <if test="author != null and author != ''">
+                author=#{author},
+            </if>
+            <if test="publishOrg != null and publishOrg != ''">
+                publish_org=#{publishOrg},
+            </if>
+            <if test="publishTime != null and publishTime != ''">
+                publish_time=#{publishTime},
+            </if>
+            <if test="state != null and state != 0">
+                state=#{state},
+            </if>
+            <if test="bookImage != null and bookImage != ''">
+                book_image=#{bookImage},
+            </if>
+        </trim>
+        where id=#{id}
+    </update>
+
+<!--    /**-->
+<!--    * 按多本书籍名称查询书籍-->
+<!--    * @param bookNames-->
+<!--    * @return-->
+<!--    */-->
+<!--    List<Book> selectBooksByBookNameList(List<String> bookNames);-->
+    <select id="selectBooksByBookNameList" parameterType="java.util.List" resultType="Book">
+        select * from tb_book
+        <where>
+            book_name in
+            <foreach collection="bookNames" item="bookName" open="(" close=")" separator=",">
+                #{bookName}
+            </foreach>
+        </where>
+    </select>
+
+    <select id="selectBooksByTypeId" resultType="Book">
+        select * from tb_book where type_id = #{typeId}
+    </select>
+</mapper>

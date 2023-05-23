@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="616714da-2f44-487e-a76f-bf8d7e614f77" name="Default Changelist" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="spring-beans.schema" />
+        <option value="Interface" />
+        <option value="AnnotationType" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1f78BWek8QQfGE4XFzKOPiC12YB" />
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2720588" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.blb.ioc_demo" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\java_code\ioc_demo\src\main\java\com\blb\ioc_demo\demo2" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Application.TestFactory">
+    <configuration name="ComputerConfig" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.blb.ioc_demo.ComputerConfig" />
+      <module name="ioc_demo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.blb.ioc_demo.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GG" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.blb.ioc_demo.GG" />
+      <module name="ioc_demo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.blb.ioc_demo.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestComputer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.blb.ioc_demo.TestComputer" />
+      <module name="ioc_demo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.blb.ioc_demo.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestComputerSpring" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.blb.ioc_demo.TestComputerSpring" />
+      <module name="ioc_demo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.blb.ioc_demo.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestFactory" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.blb.ioc_demo.demo2.TestFactory" />
+      <module name="ioc_demo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.blb.ioc_demo.demo2.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.TestFactory" />
+        <item itemvalue="Application.TestComputerSpring" />
+        <item itemvalue="Application.GG" />
+        <item itemvalue="Application.ComputerConfig" />
+        <item itemvalue="Application.TestComputer" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="616714da-2f44-487e-a76f-bf8d7e614f77" name="Default Changelist" comment="" />
+      <created>1595557635257</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1595557635257</updated>
+      <workItem from="1595557643333" duration="18221000" />
+      <workItem from="1597974488741" duration="592000" />
+      <workItem from="1597993589881" duration="2797000" />
+      <workItem from="1598060600633" duration="46000" />
+      <workItem from="1598063023800" duration="20000" />
+      <workItem from="1598071470375" duration="831000" />
+      <workItem from="1598341343267" duration="1421000" />
+      <workItem from="1607579952844" duration="269000" />
+      <workItem from="1607580258664" duration="7314000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+</project>

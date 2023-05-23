@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!--配置C3P0数据源-->
+    <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+        <!--jdbc的配置-->
+        <property name="driverClass" value="com.mysql.cj.jdbc.Driver"></property>
+        <property name="jdbcUrl" value="jdbc:mysql://localhost:3306/book_db?useUnicode=true&amp;characterEncoding=UTF-8&amp;serverTimezone=UTC&amp;useSSL=false"></property>
+        <property name="user" value="root"></property>
+        <property name="password" value="123456"></property>
+        <!--非必须-->
+        <property name="maxPoolSize" value="100"></property>
+        <property name="minPoolSize" value="10"></property>
+        <property name="initialPoolSize" value="10"></property>
+        <property name="maxStatements" value="200"></property>
+    </bean>
+    <!--配置会话工厂-->
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <!--配置数据源-->
+        <property name="dataSource" ref="dataSource"></property>
+        <!--包的别名-->
+        <property name="typeAliasesPackage" value="com.blb.bookms.entity"></property>
+        <!--MyBatis配置文件路径-->
+        <property name="configLocation" value="classpath:mybatis-config.xml"/>
+        <!--映射文件的路径-->
+        <property name="mapperLocations" value="classpath:mappers/*.xml"></property>
+    </bean>
+    <!--配置映射接口的扫描器-->
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <!--会话工厂名称-->
+        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"></property>
+        <!--接口的包位置-->
+        <property name="basePackage" value="com.blb.bookms.dao"></property>
+    </bean>
+</beans>

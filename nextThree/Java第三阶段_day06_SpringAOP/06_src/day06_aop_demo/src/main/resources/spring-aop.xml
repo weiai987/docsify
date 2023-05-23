@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/aop https://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <context:annotation-config/>
+
+    <!--配置包的扫描-->
+    <context:component-scan base-package="com.blb.aop_demo"></context:component-scan>
+
+<!--    &lt;!&ndash;配置通知类&ndash;&gt;-->
+<!--    <bean id="logAdvise" class="com.blb.aop_demo.util.LogAdvise"></bean>-->
+<!--    &lt;!&ndash;配置切面&ndash;&gt;-->
+<!--    <aop:config>-->
+<!--        &lt;!&ndash;配置切入点&ndash;&gt;-->
+<!--        <aop:pointcut id="pc1" expression="execution(public void com.blb.aop_demo.service.UserService.queryUser())"/>-->
+<!--        <aop:pointcut id="pc2" expression="execution(* com.blb.aop_demo.service.*Service.*(int,..))"/>-->
+<!--        <aop:pointcut id="pc3" expression="@annotation(com.blb.aop_demo.util.AopTest)"/>-->
+<!--        <aop:pointcut id="pc4" expression="within(com.blb..*Service)"/>-->
+<!--        <aop:pointcut id="pc5" expression="args(int,..)"/>-->
+<!--        &lt;!&ndash;配置切面 ref是通知类的bean&ndash;&gt;-->
+<!--        <aop:aspect id="aspect1" ref="logAdvise">-->
+<!--&lt;!&ndash;            &lt;!&ndash;前置通知 method是对应的通知方法 pointcut-ref是切入点&ndash;&gt;-->
+<!--            <aop:before method="beforeLog" pointcut-ref="pc3"></aop:before>-->
+<!--            &lt;!&ndash;后置&ndash;&gt;-->
+<!--            <aop:after method="afterLog" pointcut-ref="pc3"></aop:after>-->
+<!--            &lt;!&ndash;后置返回&ndash;&gt;-->
+<!--            <aop:after-returning method="afterReturning" pointcut-ref="pc3"></aop:after-returning>-->
+<!--            &lt;!&ndash;后置抛异常&ndash;&gt;-->
+<!--            <aop:after-throwing method="afterThrowing" pointcut-ref="pc3"></aop:after-throwing>&ndash;&gt;-->
+<!--            &lt;!&ndash;环绕&ndash;&gt;-->
+<!--            <aop:around method="around" pointcut-ref="pc5"></aop:around>-->
+<!--        </aop:aspect>-->
+<!--    </aop:config>-->
+</beans>

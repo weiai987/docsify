@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="8cf2670a-e0e6-4f3e-9299-6fdc6c24458d" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ProjectId" id="1me7oAJK85vOlJX11MCit0RNtqK" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="C:/lagou" />
+  </component>
+  <component name="RunManager">
+    <configuration name="Springboot06Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="springboot06" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.lagou.Springboot06Application" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8cf2670a-e0e6-4f3e-9299-6fdc6c24458d" name="Default Changelist" comment="" />
+      <created>1609842374343</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1609842374343</updated>
+      <workItem from="1609842375538" duration="66000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="374" y="97" width="1171" height="886" key="find.popup" timestamp="1609842398219">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="374" y="97" width="1171" height="886" key="find.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1609842398219" />
+  </component>
+</project>
