@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/demo-cloud-config/demo-cloud-config.iml" filepath="$PROJECT_DIR$/demo-cloud-config/demo-cloud-config.iml" />
+      <module fileurl="file://$PROJECT_DIR$/demo-cloud-eureka/demo-cloud-eureka.iml" filepath="$PROJECT_DIR$/demo-cloud-eureka/demo-cloud-eureka.iml" />
+      <module fileurl="file://$PROJECT_DIR$/demo-cloud-eureka9201/demo-cloud-eureka9201.iml" filepath="$PROJECT_DIR$/demo-cloud-eureka9201/demo-cloud-eureka9201.iml" />
+      <module fileurl="file://$PROJECT_DIR$/demo-cloud-gateway-server/demo-cloud-gateway.iml" filepath="$PROJECT_DIR$/demo-cloud-gateway-server/demo-cloud-gateway.iml" />
+      <module fileurl="file://$PROJECT_DIR$/demo-cloud-gateway-server/demo-cloud-gateway-server.iml" filepath="$PROJECT_DIR$/demo-cloud-gateway-server/demo-cloud-gateway-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/demo-parent.iml" filepath="$PROJECT_DIR$/demo-parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/demo-service-common/demo-service-common.iml" filepath="$PROJECT_DIR$/demo-service-common/demo-service-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/demo-service-page/demo-service-page.iml" filepath="$PROJECT_DIR$/demo-service-page/demo-service-page.iml" />
+      <module fileurl="file://$PROJECT_DIR$/demo-service-product/demo-service-product.iml" filepath="$PROJECT_DIR$/demo-service-product/demo-service-product.iml" />
+      <module fileurl="file://$PROJECT_DIR$/demo-service-product9001/demo-service-product9001.iml" filepath="$PROJECT_DIR$/demo-service-product9001/demo-service-product9001.iml" />
+    </modules>
+  </component>
+</project>

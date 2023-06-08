@@ -1,0 +1,27 @@
+server:
+  port: 9300
+eureka:
+  client:
+    serviceUrl: # eureka server的路径
+      defaultZone: http://demoCloudEurekaServerA:9200/eureka,http://demoCloudEurekaServerB:9201/eureka
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ip-address}:${spring.application.name}:${server.port}:@project.version@
+spring:
+  application:
+    name: demo-cloud-gateway
+  #网关的配置
+  cloud:
+    gateway:
+      routes: #配置路由
+        - id: service-page-router
+          uri: http://127.0.0.1:9100
+          predicates: #当断言成功后，交给某一个微服务处理时使用的是转发
+            - Path=/page/**
+        - id: service-product-router
+          uri: http://127.0.0.1:9000
+          predicates:
+            - Path=/product/**
+          filters:
+            # http://127.0.0.1:9300/product/service/port  -->  /service/port --> 商品微服务
+            - StripPrefix=1  #去掉uri中的第一部分，所以就要求我们通过网关访问的时候，把uri的第一部分设置为product，从uri的第二部分开始才是真正的uri

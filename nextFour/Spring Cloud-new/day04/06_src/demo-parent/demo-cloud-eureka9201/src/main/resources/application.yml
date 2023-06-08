@@ -1,0 +1,14 @@
+#Eureka server服务端口
+server:
+  port: 9201
+spring:
+  application:
+    name: demo-cloud-eureka-server # 应用名称，会在Eureka中作为服务的id标识（serviceId）
+eureka:
+  instance:
+    hostname: demoCloudEurekaServerB
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    serviceUrl:
+      defaultZone: http://demoCloudEurekaServerA:9200/eureka
