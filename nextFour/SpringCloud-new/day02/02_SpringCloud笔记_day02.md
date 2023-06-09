@@ -465,9 +465,9 @@ public class ServerConfigController {
 
 如果不进行任何设置，所有熔断方法使用一个Hystrix线程池（10个线程），那么这样的话会导致问题，这个问题并不是扇出链路微服务不可用导致的，而是我们的线程机制导致的，如果方法A的请求把10个线程都用了，方法2请求处理的时候压根都没法去访问B，因为没有线程可用，并不是B服务不可用。
 
-![image-20200922115251568](Spring Cloud微服务讲义.assets\image-20200922115251568.png)
+![image-20200922115251568](SpringCloud微服务讲义.assets\image-20200922115251568.png)
 
-![image-20201003120521130](Spring Cloud微服务讲义.assets/image-20201003120521130.png)
+![image-20201003120521130](SpringCloud微服务讲义.assets/image-20201003120521130.png)
 
 为了避免问题服务请求过多导致正常服务无法访问，Hystrix 不是采用增加线程数，而是单独的为每一个控制方法创建一个线程池的方式，这种模式叫做“舱壁模式"，也是线程隔离的手段。
 
@@ -475,7 +475,7 @@ public class ServerConfigController {
 
 ## 2.6 Hystrix工作流程与高级应用
 
-<img src="Spring Cloud微服务讲义.assets\image-20200922115455131.png" alt="image-20200922115455131"  />
+![image-20200922115455131](SpringCloud微服务讲义.assets/image-20200922115455131.png)
 
 1）当调用出现问题时，开启一个时间窗（10s）
 
