@@ -2,7 +2,7 @@
 
 ​		在之前的案例中，服务消费者调用服务提供者的时候使用RestTemplate技术。
 
-![image-20200922144937859](SpringCloud微服务讲义.assets\image-20200922144937859.png)
+![image-20200922144937859](Spring Cloud微服务讲义.assets\image-20200922144937859.png)
 
 ## 1.1 Feign简介
 
@@ -260,7 +260,7 @@ feign:
 
 ​		**网关在架构中的位置**
 
-![image-20200922160608839](SpringCloud微服务讲义.assets\image-20200922160608839.png)
+![image-20200922160608839](Spring Cloud微服务讲义.assets\image-20200922160608839.png)
 
 ## 2.2 GateWay核心概念
 
@@ -277,7 +277,7 @@ feign:
 
 ##  2.3 GateWay如何工作
 
-![image-20201003165006324](SpringCloud微服务讲义.assets/image-20201003165006324.png)
+![image-20201003165006324](Spring Cloud微服务讲义.assets/image-20201003165006324.png)
 
 
 
@@ -479,11 +479,11 @@ spring:
 
 ```
 
-![image-20201003175048515](SpringCloud微服务讲义.assets/image-20201003175048515.png)
+![image-20201003175048515](Spring Cloud微服务讲义.assets/image-20201003175048515.png)
 
-![image-20201003175332802](SpringCloud微服务讲义.assets/image-20201003175332802.png)
+![image-20201003175332802](Spring Cloud微服务讲义.assets/image-20201003175332802.png)
 
-![image-20201003175607147](SpringCloud微服务讲义.assets/image-20201003175607147.png)
+![image-20201003175607147](Spring Cloud微服务讲义.assets/image-20201003175607147.png)
 
 - 启动类
 
@@ -517,7 +517,7 @@ http://127.0.0.1:9300/product/product/query/1
 
 ​		Spring Cloud GateWay 帮我们内置了很多 Predicates功能，实现了各种路由匹配规则（通过 Header、请求参数等作为条件）匹配到对应的路由。
 
-![image-20200922173034676](SpringCloud微服务讲义.assets\image-20200922173034676.png)
+![image-20200922173034676](Spring Cloud微服务讲义.assets\image-20200922173034676.png)
 
 
 

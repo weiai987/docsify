@@ -30,7 +30,7 @@
 
 ​		Spring Cloud Conﬁg是一个分布式配置管理方案，包含了 Server端和 Client端两个部分。
 
-![image-20200922180904548](SpringCloud微服务讲义.assets\image-20200922180904548.png)
+![image-20200922180904548](Spring Cloud微服务讲义.assets\image-20200922180904548.png)
 
 * Server 端：提供配置文件的存储、以接口的形式将配置文件的内容提供出去，通过使用@EnableConﬁgServer注解在 Spring boot 应用中非常简单的嵌入
 * Client 端：通过接口获取配置数据并初始化自己的应用
@@ -223,7 +223,7 @@ public class ConfigClientController {
 
 启动日志：
 
-![image-20200922193031052](SpringCloud微服务讲义.assets\image-20200922193031052.png)
+![image-20200922193031052](Spring Cloud微服务讲义.assets\image-20200922193031052.png)
 
 
 
@@ -290,7 +290,7 @@ public class ConfigClientController {
 
 ​	   4）手动向Client客户端发起POST请求，http://localhost:9100/actuator/refresh，刷新配置信息
 
-![image-20200922193833486](SpringCloud微服务讲义.assets\image-20200922193833486.png)
+![image-20200922193833486](Spring Cloud微服务讲义.assets\image-20200922193833486.png)
 
 ​		**注意：手动刷新方式避免了服务重启**
 
@@ -310,7 +310,7 @@ public class ConfigClientController {
 
 ​		Spring Cloud Bus（基于MQ的，支持RabbitMq/Kafka） 是Spring Cloud中的消息总线方案，Spring Cloud Config + Spring Cloud Bus 结合可以实现配置信息的自动更新。
 
-![image-20201004104231604](SpringCloud微服务讲义.assets/image-20201004104231604.png)
+![image-20201004104231604](Spring Cloud微服务讲义.assets/image-20201004104231604.png)
 
 
 
@@ -359,7 +359,7 @@ management:
 
 http://127.0.0.1:9400/actuator/bus-refresh
 
-![image-20200922205653675](SpringCloud微服务讲义.assets\image-20200922205653675.png)
+![image-20200922205653675](Spring Cloud微服务讲义.assets\image-20200922205653675.png)
 
 
 
