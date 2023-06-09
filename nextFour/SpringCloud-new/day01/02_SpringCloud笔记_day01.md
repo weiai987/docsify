@@ -145,7 +145,7 @@
 
 ​		**服务发现：**服务消费者能够从注册中心获取到较为实时的服务列表，然后根究一定的策略选择一个服务访问
 
-<img src="SpringCloud微服务讲义.assets\image-20200921121002811.png" alt="image-20200921121002811" style="zoom:80%;" />
+![image-20200921121002811](SpringCloud微服务讲义.assets\image-20200921121002811.png)
 
 ![image-20201001143512949](SpringCloud微服务讲义.assets/image-20201001143512949.png)
 
@@ -153,7 +153,7 @@
 
 负载均衡即将请求压力分配到多个服务器（应用服务器、数据库服务器等），以此来提高服务的性能、可靠性	
 
-<img src="SpringCloud微服务讲义.assets\image-20200921121612979.png" alt="image-20200921121612979" style="zoom: 80%;" />
+![image-20201001143512949](SpringCloud微服务讲义.assets\image-20200921121612979.png)
 
 
 
@@ -161,7 +161,7 @@
 
 ​		熔断即断路保护。微服务架构中，如果下游服务因访问压力过大而响应变慢或失败，上游服务为了保护系统整体可用性，可以暂时切断对下游服务的调用。这种牺牲局部，保全整体的措施就叫做熔断。
 
-<img src="SpringCloud微服务讲义.assets\image-20200921121900709.png" alt="image-20200921121900709" style="zoom: 80%;" />
+![image-20200921121900709](SpringCloud微服务讲义.assets\image-20200921121900709.png)
 
 ![image-20201001143852876](SpringCloud微服务讲义.assets/image-20201001143852876.png)
 
@@ -172,8 +172,7 @@
 微服务架构越发流行，一个项目往往拆分成很多个服务，那么一次请求就需要涉及到很多个服务。不同的微服务可能是由不同的团队开发、可能使用不同的编程语言实现、整个项目也有可能部署在了很多服务器上（甚至百台、千台）横跨多个不同的数据中心。所谓链路追踪，就是对一次请求涉及的很多个服务链路进行日志记录、性能监控
 
 
-
-<img src="SpringCloud微服务讲义.assets\image-20200921122004045.png" alt="image-20200921122004045" style="zoom: 67%;" />
+![image-20200921122004045](SpringCloud微服务讲义.assets\image-20200921122004045.png)
 
 * **API 网关**
 
@@ -201,7 +200,7 @@
 
 ​		6）容错能力（负载均衡）
 
-<img src="SpringCloud微服务讲义.assets\image-20200921122144344.png" alt="image-20200921122144344" style="zoom: 80%;" />
+![image-20200921122144344](SpringCloud微服务讲义.assets\image-20200921122144344.png)
 
 
 
@@ -217,7 +216,7 @@
 
 ​		利用Spring Boot的开发便利性简化了微服务架构的开发（自动装配）
 
-<img src="SpringCloud微服务讲义.assets\image-20200921141543080.png" alt="image-20200921141543080" style="zoom:80%;" />
+![image-20200921141543080](SpringCloud微服务讲义.assets\image-20200921141543080.png)
 
 这里，我们需要注意，Spring Cloud其实是一套规范，是一套用于构建微服务架构的规范，而不是一个可以拿来即用的框架（所谓规范就是应该有哪些功能组件，然后组件之间怎么配合，共同完成什么事情）。在这个规范之下第三方的Netflix公司开发了一些组件、Spring官方开发了一些框架/组件，包括第三方的阿里巴巴开发了一套框架/组件集合Spring Cloud Alibaba，这些才是Spring Cloud规范的实现。
 
@@ -317,7 +316,7 @@ Spring Cloud中的各组件协同工作，才能够支持一个完整的微服�
 
 需求：
 
-​		![image-20200921150339296](SpringCloud微服务讲义.assets/image-20200921150339296.png)
+![image-20200921150339296](SpringCloud微服务讲义.assets/image-20200921150339296.png)
 
 ![image-20201001171122728](SpringCloud微服务讲义.assets/image-20201001171122728.png)
 
@@ -827,8 +826,7 @@ public class PageApplication {
 ​	说明：上面提到网关组件Zuul性能一般，未来将退出Spring Cloud 生态圈，所以我们直接讲解GateWay，在课程章节规划时，我们就把GateWay划分到第一代Spring Cloud 核心组件这一部分了。
 
 ​	各组件整体结构如下：
-
-<img src="SpringCloud微服务讲义.assets/image-20200921164912130.png" alt="image-20200921164912130" style="zoom:80%;" />
+![image-20200921164912130](SpringCloud微服务讲义.assets\image-20200921164912130.png)
 
 从形式上来说，Feign一个顶三，Feign = RestTemplate + Ribbon + Hystrix
 
@@ -852,7 +850,8 @@ public class PageApplication {
 
 ##### 1.1.1注册中心实现原理
 
-<img src="SpringCloud微服务讲义.assets/image-20200921173149497.png" alt="image-20200921173149497" style="zoom:80%;" />
+![image-20200921173149497](SpringCloud微服务讲义.assets\image-20200921173149497.png)
+
 
 ​		![image-20201001204956251](SpringCloud微服务讲义.assets/image-20201001204956251.png)
 
@@ -925,7 +924,7 @@ A：高可用：Reads and writes always succeed
 
 - Eureka 交互流程及原理
 
-<img src="SpringCloud微服务讲义.assets/image-20200921174025653.png" alt="image-20200921174025653" style="zoom:150%;" />
+![image-20200921174025653](SpringCloud微服务讲义.assets\image-20200921174025653.png)
 
 ![image-20201002110004098](SpringCloud微服务讲义.assets/image-20201002110004098.png)
 

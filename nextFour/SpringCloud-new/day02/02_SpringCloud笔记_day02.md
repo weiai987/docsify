@@ -15,8 +15,7 @@
 ​		Ribbon是Netflix发布的负载均衡器。Eureka一般配合Ribbon进行使用，Ribbon利用从Eureka中读取到服务信息，在调用服务提供者提供的服务时，会根据一定的算法进行负载。
 
 ​	
-
-<img src="Spring Cloud微服务讲义.assets\image-20200921211817112.png" alt="image-20200921211817112" style="zoom:80%;" />
+![image-20200921211817112](SpringCloud微服务讲义.assets/image-20200921211817112.png)
 
 ## 1.2 Ribbon高级应用
 
@@ -26,7 +25,7 @@
 
 ​		Page微服务中通过负载均衡策略调用demo-service-product的controller
 
-![image-20201002171933559](Spring Cloud微服务讲义.assets/image-20201002171933559.png)
+![image-20201002171933559](SpringCloud微服务讲义.assets/image-20201002171933559.png)
 
 ​	
 
@@ -123,7 +122,7 @@ public interface IRule{
 }
 ```
 
-![image-20201002174509950](Spring Cloud微服务讲义.assets/image-20201002174509950.png)
+![image-20201002174509950](SpringCloud微服务讲义.assets/image-20201002174509950.png)
 
 | 负载均衡策略                                    | 描述                                                         |
 | ----------------------------------------------- | ------------------------------------------------------------ |
@@ -157,7 +156,7 @@ demo-service-product:
 
 **Ribbon工作原理：**
 
-#### ![image-20200921220341544](Spring Cloud微服务讲义.assets\image-20200921220341544.png)
+![image-20200921220341544](SpringCloud微服务讲义.assets\image-20200921220341544.png)
 
 
 
@@ -168,7 +167,7 @@ org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
 org.springframework.cloud.netflix.ribbon.RibbonAutoConfiguration
 ```
 
-![image-20200922101204435](Spring Cloud微服务讲义.assets\image-20200922101204435.png)
+![image-20200922101204435](SpringCloud微服务讲义.assets\image-20200922101204435.png)
 
 
 
@@ -176,11 +175,11 @@ org.springframework.cloud.netflix.ribbon.RibbonAutoConfiguration
 
    **装配验证：**
 
-![image-20200922101417480](Spring Cloud微服务讲义.assets\image-20200922101417480.png)
+![image-20200922101417480](SpringCloud微服务讲义.assets\image-20200922101417480.png)
 
    	**自动注入：**	
 
-​     			![image-20200922101549059](Spring Cloud微服务讲义.assets\image-20200922101549059.png)
+​     			![image-20200922101549059](SpringCloud微服务讲义.assets\image-20200922101549059.png)
 
 
 
@@ -190,7 +189,7 @@ org.springframework.cloud.netflix.ribbon.RibbonAutoConfiguration
 
 ​		         
 
-​                ![image-20200922102151747](Spring Cloud微服务讲义.assets\image-20200922102151747.png)
+​                ![image-20200922102151747](SpringCloud微服务讲义.assets\image-20200922102151747.png)
 
 到这里，我们明白，添加了注解的RestTemplate对象会被添加一个拦截器LoadBalancerInterceptor，该拦截器就是后续拦截请求进行负载处理的。
 
@@ -212,23 +211,23 @@ org.springframework.cloud.netflix.ribbon.RibbonAutoConfiguration
 
 
 
-![image-20200922110536206](Spring Cloud微服务讲义.assets\image-20200922110536206.png)
+![image-20200922110536206](SpringCloud微服务讲义.assets\image-20200922110536206.png)
 
 
 
-![image-20200922110614077](Spring Cloud微服务讲义.assets\image-20200922110614077.png)
+![image-20200922110614077](SpringCloud微服务讲义.assets\image-20200922110614077.png)
 
 
 
-![image-20200922111648203](Spring Cloud微服务讲义.assets\image-20200922111648203.png)
+![image-20200922111648203](SpringCloud微服务讲义.assets\image-20200922111648203.png)
 
 
 
-![image-20200922111758206](Spring Cloud微服务讲义.assets\image-20200922111758206.png)
+![image-20200922111758206](SpringCloud微服务讲义.assets\image-20200922111758206.png)
 
 ​		
 
-![image-20200922112640278](Spring Cloud微服务讲义.assets\image-20200922112640278.png)
+![image-20200922112640278](SpringCloud微服务讲义.assets\image-20200922112640278.png)
 
 ​		扇入：代表着该微服务被调用的次数，扇入大，说明该模块复用性好
 
@@ -255,8 +254,7 @@ org.springframework.cloud.netflix.ribbon.RibbonAutoConfiguration
 服务雪崩的每个阶段都可能由不同的原因造成： 
 
 ​	
-
-<img src="Spring Cloud微服务讲义.assets\image-20200922112153836.png" alt="image-20200922112153836" style="zoom:80%;" />
+![image-20200922112153836](SpringCloud微服务讲义.assets/image-20200922112153836.png)
 
 
 
@@ -303,7 +301,7 @@ org.springframework.cloud.netflix.ribbon.RibbonAutoConfiguration
 
 ## 2.3 Hystrix简介
 
-<img src="Spring Cloud微服务讲义.assets/image-20201002211201095.png" alt="image-20201002211201095" style="zoom:50%;" />
+![image-20201002211201095](SpringCloud微服务讲义.assets/image-20201002211201095.png)
 
 ​		**[来自官网]**Hystrix(豪猪)，宣言“defend your application”是由Netﬂix开源的一个延迟和容错库，用于隔离访问远程系统、服务或者第三方库，防止级联失败，从而提升系统的可用性与容错性。Hystrix主要通过以下几点实现延迟和容错。
 

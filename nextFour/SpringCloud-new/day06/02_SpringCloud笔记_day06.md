@@ -48,11 +48,11 @@ Sentinel 具有以下特征:
 
 Sentinel 的主要特性：
 
-<img src="Spring Cloud微服务讲义.assets\image-20200923143505860.png" alt="image-20200923143505860" style="zoom: 67%;" />
+![image-20200923143505860](SpringCloud微服务讲义.assets\image-20200923143505860.png)
 
 Sentinel 的开源生态：
 
-<img src="Spring Cloud微服务讲义.assets\image-20200923143557612.png" alt="image-20200923143557612" style="zoom: 80%;" />
+![image-20200923143557612](SpringCloud微服务讲义.assets\image-20200923143557612.png)
 
 
 
@@ -71,7 +71,7 @@ Sentinel 的开源生态：
 
 ​		用户名/密码：sentinel/sentinel
 
-![image-20200330164448818](Spring Cloud微服务讲义.assets\image-20200330164448818.png)
+![image-20200330164448818](SpringCloud微服务讲义.assets\image-20200330164448818.png)
 
 ### 1.1.4 服务改造
 
@@ -137,7 +137,7 @@ management:
 
 此时我们发现控制台没有任何变化，因为懒加载，我们只需要发起一次请求触发即可
 
-![image-20200923154350009](Spring Cloud微服务讲义.assets\image-20200923154350009.png)
+![image-20200923154350009](SpringCloud微服务讲义.assets\image-20200923154350009.png)
 
 
 
@@ -147,9 +147,9 @@ management:
 
 ​			系统并发能力有限，比如系统A的QPS支持1个，如果太多请求过来，那么A就应该进行流量控制了，比如其他请求直接拒绝
 
-<img src="Spring Cloud微服务讲义.assets/image-20201004203608237.png" alt="image-20201004203608237" style="zoom:80%;" />
+![image-20201004203608237](SpringCloud微服务讲义.assets\image-20201004203608237.png)
 
-<img src="Spring Cloud微服务讲义.assets\image-20200923154824531.png" alt="image-20200923154824531" style="zoom: 80%;" />
+![image-20200923154824531](SpringCloud微服务讲义.assets\image-20200923154824531.png)
 
 资源名：默认请求路径
 
@@ -183,7 +183,7 @@ management:
 
 ​		关联的资源调用达到阈值时候限流自己，比如用户注册接口，需要调用身份证校验接口（往往身份证校验接口），如果身份证校验接口请求达到阈值，使用关联，可以对用户注册接口进行限流。
 
-![image-20200925102601697](Spring Cloud微服务讲义.assets\image-20200925102601697.png)
+![image-20200925102601697](SpringCloud微服务讲义.assets\image-20200925102601697.png)
 
 
 
@@ -248,7 +248,7 @@ machine-root
 
 上图中来自入口 `Entrance1` 和 `Entrance2` 的请求都调用到了资源 `NodeA`，Sentinel 允许只根据某个调用入口的统计信息对资源限流。比如链路模式下设置入口资源为 `Entrance1` 来表示只有从入口 `Entrance1` 的调用才会记录到 `NodeA` 的限流统计当中，而不关心经 `Entrance2` 到来的调用。
 
-![image-20200925102807165](Spring Cloud微服务讲义.assets\image-20200925102807165.png)
+![image-20200925102807165](SpringCloud微服务讲义.assets\image-20200925102807165.png)
 
 
 
@@ -260,7 +260,7 @@ machine-root
 
 ​		Warm Up 模式默认会从设置的 QPS 阈值的 1/3 开始慢慢往上增加至 QPS 设置值。
 
-![image-20200925102902816](Spring Cloud微服务讲义.assets\image-20200925102902816.png)
+![image-20200925102902816](SpringCloud微服务讲义.assets\image-20200925102902816.png)
 
 
 
@@ -284,29 +284,29 @@ machine-root
 
 ​		Sentinel不会像Hystrix那样放过一个请求尝试自我修复，就是明明确确按照时间窗口来，熔断触发后，时间窗口内拒绝请求，时间窗口后就恢复。
 
-![image-20201004224102004](Spring Cloud微服务讲义.assets/image-20201004224102004.png)
+![image-20201004224102004](SpringCloud微服务讲义.assets/image-20201004224102004.png)
 
-![image-20201004225157176](Spring Cloud微服务讲义.assets/image-20201004225157176.png)
+![image-20201004225157176](SpringCloud微服务讲义.assets/image-20201004225157176.png)
 
 * RT（平均响应时间 ）
 
   ​		当 1s 内持续进入 >=5 个请求，平均响应时间超过阈值（以 ms 为单位），那么在接下的时间窗口（以 s 为单位）之内，对这个方法的调用都会自动地熔断（抛出 DegradeException）。注意 Sentinel 默认统计的 RT 上限是 4900 ms，超出此阈值的都会算作 4900 ms，若需要变更此上限可以通过启动配置项 -Dcsp.sentinel.statistic.max.rt=xxx 来配置。
 
-<img src="Spring Cloud微服务讲义.assets\image-20200925103101390.png" alt="image-20200925103101390" style="zoom: 67%;" />
+![image-20200925103101390](SpringCloud微服务讲义.assets\image-20200925103101390.png)
 
 - 异常比例
 
 
 ​		当资源的每秒请求量 >= 5，并且每秒异常总数占通过量的比值超过阈值之后，资源进入降级状态，即在接下的时间窗口（以 s 为单位）之内，对这个方法的调用都会自动地返回。异常比率的阈值范围是 `[0.0, 1.0]`，代表 0% - 100%。
 
-<img src="Spring Cloud微服务讲义.assets\image-20200925103153089.png" alt="image-20200925103153089" style="zoom:67%;" />
+![image-20200925103153089](SpringCloud微服务讲义.assets\image-20200925103153089.png)
 
 - 异常数
 
 
 ​		当资源近 1 分钟的异常数目超过阈值之后会进行熔断。注意由于统计时间窗口是分钟级别的，若 `timeWindow` 小于 60s，则结束熔断状态后仍可能再进入熔断状态，时间窗口 >= 60s。
 
-<img src="Spring Cloud微服务讲义.assets\image-20200925103235240.png" alt="image-20200925103235240" style="zoom:67%;" />
+![image-20200925103235240](SpringCloud微服务讲义.assets\image-20200925103235240.png)
 
 
 
