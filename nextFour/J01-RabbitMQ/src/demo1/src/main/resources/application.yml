@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: rabbitmq-springboot
+
+# 配置虚拟主机
+  rabbitmq:
+    host: 47.100.104.187
+    port: 5672
+    username: joker
+    password: 123456
+    virtual-host: /joker

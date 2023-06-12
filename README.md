@@ -77,11 +77,11 @@
 ## Java第四阶段
 
 * [Spring Cloud笔记_day01](./nextFour/SpringCloud-new/day01/02_SpringCloud笔记_day01.md)
-
 * [Spring Cloud笔记_day02](./nextFour/SpringCloud-new/day02/02_SpringCloud笔记_day02.md)
 * [Spring Cloud笔记_day03](./nextFour/SpringCloud-new/day03/02_SpringCloud笔记_day03.md)
 * [Spring Cloud笔记_day04](./nextFour/SpringCloud-new/day04/02_SpringCloud笔记_day04.md)
 * [Spring Cloud笔记_day05](./nextFour/SpringCloud-new/day05/02_SpringCloud笔记_day05.md)
 * [Spring Cloud笔记_day06](./nextFour/SpringCloud-new/day06/02_SpringCloud笔记_day06.md)
+* [01_RabbitMQ课件_day01](./nextFour/J01-RabbitMQ/01_RabbitMQ课件_day01.md)
 
 ## Java第五阶段

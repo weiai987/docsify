@@ -1,0 +1,23 @@
+server:
+  port: 8099
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/rabbit_test?useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&serverTimezone=Asia/Shanghai
+    username: root
+    password: root
+  rabbitmq:
+    host: 127.0.0.1
+    username: guest
+    password: guest
+    port: 5672
+    virtual-host: order
+
+
+  mvc:
+    static-path-pattern: classpath:/templates/
+
+mybatis:
+  type-aliases-package: com.example.demo.mapper
+  mapper-locations: /mappers/*.xml
