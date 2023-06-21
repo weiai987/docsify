@@ -84,5 +84,10 @@
 * [Spring Cloud笔记_day06](./nextFour/SpringCloud-new/day06/02_SpringCloud笔记_day06.md)
 * [01_RabbitMQ课件_day01](./nextFour/J01-RabbitMQ/01_RabbitMQ课件_day01.md)
 * [seata](./nextFour/seata/seata.md)
+* [new_seata](./nextFour/seata-new/seata.md)
+* [ElasticSearch](./nextFour/ElasticSearch/讲义/ElasticSearch.md)
+* [Java第四阶段_day16_Jenkins](./nextFour/Java第四阶段_day16_Jenkins/Java第四阶段_day99_Jenkins/Jenkins.md)
+* [Java第四阶段_day17_ElasticSearch](./nextFour/Java第四阶段_day17_ElasticSearch/Java第四阶段_day01_ElasticSearch/day01-elasticsearch.md)
+* [Java第四阶段_day18_Sharding-jdbc](./nextFour/Java第四阶段_day18_Sharding-jdbc/Java第四阶段_day01_Sharding-jdbc/sharding-jdbc.md)
 
 ## Java第五阶段
