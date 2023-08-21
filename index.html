@@ -26,7 +26,18 @@
 		// 读取md文件中最大几级目录
 		subMaxLevel: 10,
 		// 切换页面后跳回页面顶部
-		auto2top: true,
+		auto2top: false,
+		autoLink: false,
+		loadNavbar: true,
+		//去除后缀.md
+		loadNavbar: function(navbar) {
+			if (navbar.link.endsWith('.md')) {
+			navbar.link = navbar.link.slice(0, -3);
+			}
+		
+			return navbar;
+		}
+		onlyCover: true
 		// 搜索配置
 		search: {
 			maxAge: 86400000,
